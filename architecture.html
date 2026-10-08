@@ -1,0 +1,1775 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Binit Datta architecture portfolio: enterprise systems, IAM, cloud, data, RAG and Agentic AI architectures from 1995 onward.">
+    <title>Architecture Portfolio | Binit Datta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:wght@700&display=swap"
+          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-xl navbar-light sticky-top bd-navbar shadow-sm">
+    <div class="container-xxl"><a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><span
+            class="brand-badge">BD</span><span class="brand-text"><strong>Binit Datta</strong><small>Enterprise Technology • Architecture • AI</small></span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-xl-center gap-xl-1">
+                <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="business-verticals.html"
+                                                 role="button" data-bs-toggle="dropdown">Business Verticals</a>
+                    <ul class="dropdown-menu dropdown-menu-lg-end mega-menu p-3">
+                        <li><h6 class="dropdown-header">Industry Experience</h6></li>
+                        <li><a class="dropdown-item" href="business-verticals.html#erp">ERP, Manufacturing &
+                            Industrial</a></li>
+                        <li><a class="dropdown-item" href="business-verticals.html#healthcare">Healthcare & Pharmacy</a>
+                        </li>
+                        <li><a class="dropdown-item" href="business-verticals.html#retail">Retail, eCommerce &
+                            Consumer</a></li>
+                        <li><a class="dropdown-item" href="business-verticals.html#finance">Financial Services &
+                            Mortgage</a></li>
+                        <li><a class="dropdown-item" href="business-verticals.html#supplychain">Supply Chain &
+                            Source-to-Pay</a></li>
+                        <li><a class="dropdown-item" href="business-verticals.html#other">Telecom, Services & Due
+                            Diligence</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item fw-semibold" href="business-verticals.html">View all 18+ verticals
+                            →</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="architecture.html"
+                                                 role="button" data-bs-toggle="dropdown">Architecture</a>
+                    <ul class="dropdown-menu dropdown-menu-lg-end mega-menu p-3">
+                        <li><h6 class="dropdown-header">Architecture Portfolio</h6></li>
+                        <li><a class="dropdown-item" href="#erp-architecture">ERP & Enterprise Platforms</a></li>
+                        <li><a class="dropdown-item" href="#iam-architecture">IAM & Security</a></li>
+                        <li><a class="dropdown-item" href="#data-architecture">Cloud, Data & Analytics</a></li>
+                        <li><a class="dropdown-item" href="#ai-architecture">RAG & Agentic AI</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item fw-semibold" href="#archive">Architecture archive: 1995 →
+                            present</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="technology.html" role="button"
+                                                 data-bs-toggle="dropdown">Technology</a>
+                    <ul class="dropdown-menu dropdown-menu-lg-end mega-menu p-3">
+                        <li><a class="dropdown-item" href="technology.html#iam">IAM & Cybersecurity</a></li>
+                        <li><a class="dropdown-item" href="technology.html#java">Java, Spring & Quarkus</a></li>
+                        <li><a class="dropdown-item" href="technology.html#cloud">Cloud, Kubernetes & DevSecOps</a></li>
+                        <li><a class="dropdown-item" href="technology.html#integration">Microservices, APIs &
+                            Integration</a></li>
+                        <li><a class="dropdown-item" href="technology.html#data">Data, SQL & Analytics</a></li>
+                        <li><a class="dropdown-item" href="technology.html#ai">GenAI, RAG & Agentic AI</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item fw-semibold" href="technology.html">View technology portfolio →</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="books.html" role="button"
+                                                 data-bs-toggle="dropdown">Books</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="books.html#identity">Identity & Security</a></li>
+                        <li><a class="dropdown-item" href="books.html#spring">Spring & Microservices</a></li>
+                        <li><a class="dropdown-item" href="books.html#ai">AI & RAG</a></li>
+                        <li><a class="dropdown-item" href="books.html#architecture">Enterprise Architecture</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item fw-semibold" href="books.html">All books →</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="articles.html" role="button"
+                                                 data-bs-toggle="dropdown">Articles</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="articles.html#ai">AI & Agentic Systems</a></li>
+                        <li><a class="dropdown-item" href="articles.html#security">Security & Identity</a></li>
+                        <li><a class="dropdown-item" href="articles.html#architecture">Architecture & Microservices</a>
+                        </li>
+                        <li><a class="dropdown-item" href="articles.html#leadership">Leadership & Workforce</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item fw-semibold" href="articles.html">Selected articles →</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="videos.html" role="button"
+                                                 data-bs-toggle="dropdown">Videos</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="videos.html#agentic">Agentic AI</a></li>
+                        <li><a class="dropdown-item" href="videos.html#iam">IAM & Keycloak</a></li>
+                        <li><a class="dropdown-item" href="videos.html#spring">Spring Boot & Security</a></li>
+                        <li><a class="dropdown-item" href="videos.html#microservices">Microservices & Cloud</a></li>
+                        <li><a class="dropdown-item" href="videos.html#python">Python, LangChain & LangGraph</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item fw-semibold" href="https://www.youtube.com/@SecureAILearningLab"
+                               target="_blank">Secure AI Learning Lab ↗</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item ms-xl-2"><a class="btn btn-primary rounded-pill px-3"
+                                                href="contact.html">Connect</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="page-hero">
+    <div class="container-xxl"><span class="eyebrow">ARCHITECTURE PORTFOLIO • 1995 → PRESENT</span>
+        <h1 class="mt-3">Architectures shaped by <span class="text-primary">business reality.</span></h1>
+        <p>Three decades of solution and enterprise architecture across ERP, manufacturing, healthcare, retail, supply
+            chain, identity, cloud, data and AI. This page is designed as a living architecture archive: each project
+            can pair business context and architectural decisions with the actual diagram used to explain the
+            system.</p>
+        <div class="arch-stats mt-4">
+            <div class="arch-stat"><strong>1995 →</strong><span>Architecture journey</span></div>
+            <div class="arch-stat"><strong>18+</strong><span>Business verticals</span></div>
+            <div class="arch-stat"><strong>ERP → AI</strong><span>Technology generations</span></div>
+            <div class="arch-stat"><strong>Business + Tech</strong><span>Architecture lens</span></div>
+        </div>
+    </div>
+</header>
+
+<!-- =========================================================
+     ARCHITECTURE PORTFOLIO DISCLAIMER
+========================================================= -->
+<section class="architecture-disclaimer border-top border-bottom">
+    <div class="container-xxl py-4">
+
+        <div class="alert alert-light border rounded-4 shadow-sm mb-0 p-4">
+
+            <div class="d-flex align-items-start gap-3">
+
+                <div class="fs-3 text-primary">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+
+                <div>
+                    <h2 class="h5 fw-bold mb-2">
+                        Portfolio, Privacy & Intellectual Property Notice
+                    </h2>
+
+                    <p class="text-secondary mb-2">
+                        The architecture diagrams and project descriptions presented on this website
+                        are personal career-portfolio materials created to illustrate architectural
+                        concepts, design approaches, technology patterns and professional experience.
+                        They are not intended to reproduce or disclose any employer, client, vendor
+                        or partner's proprietary system designs, confidential information, source code,
+                        internal documentation, trade secrets or security-sensitive implementation details.
+                    </p>
+
+                    <p class="text-secondary mb-2">
+                        Visuals are intentionally simplified, generalized and reconstructed as
+                        <strong>architectural approximations</strong>. Names, topology, data flows,
+                        system boundaries, infrastructure details, integrations and visual representations
+                        may be altered or abstracted to protect the privacy, confidentiality and intellectual
+                        property of the organizations and brands associated with the original work.
+                    </p>
+
+                    <p class="text-secondary mb-0">
+                        Company names, product names, logos and trademarks, where referenced, remain the
+                        property of their respective owners and are used only to provide historical career
+                        context or identify technologies and business domains. No affiliation, endorsement
+                        or ownership of third-party intellectual property is implied.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="py-4 bg-soft-blue border-bottom">
+    <div class="container-xxl">
+        <ul class="nav nav-pills architecture-filter gap-2" role="tablist">
+            <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#featured">Featured Projects
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#principles">Architecture Principles
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#archive-map">1995–Present Archive Map
+                </button>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="featured">
+        <section class="py-5 architecture-era" id="erp-architecture">
+            <div class="container-xxl">
+                <div class="era-heading mb-4">
+                    <span class="era-year">2000s</span>
+                    <div>
+                        <span class="eyebrow">ERP • MULTI-ENTITY ENTERPRISE</span>
+                        <h2 class="mb-0">Strategic Multi-Site ERP Transformation</h2>
+                    </div>
+                </div>
+
+                <!-- Row 1: Full-width project narrative -->
+                <div class="row g-4 mb-4">
+                    <div class="col-12">
+                        <article class="project-architecture-card">
+                            <div class="card-body p-4 p-lg-5">
+                                <div class="project-meta">
+                                    <span>Enterprise ERP</span><span>Finance</span><span>Materials</span><span>Production</span><span>Payroll</span><span>B2B Integration</span>
+                                </div>
+                                <h3>24 modules across two independent entities</h3>
+                                <p class="text-secondary fs-5">A large ERP implementation spanning two nearby but
+                                    independently managed sites, with a 25-engineer delivery team. The architecture
+                                    covered core enterprise functions including finance and accounting, materials, sales
+                                    and distribution, production, equipment maintenance, personnel, payroll, security
+                                    and project information.</p>
+                                <div class="arch-stack my-3">
+                                    <span>Relational Data Model</span><span>Java Web Engine</span><span>Transactional Services</span><span>Extension Framework</span><span>Security</span><span>Enterprise Integration</span>
+                                </div>
+                                <div class="accordion accordion-flush" id="erpAccordion">
+                                    <div class="accordion-item">
+                                        <h4 class="accordion-header">
+                                            <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                                    data-bs-target="#erpDecision">Architectural significance
+                                            </button>
+                                        </h4>
+                                        <div id="erpDecision" class="accordion-collapse collapse"
+                                             data-bs-parent="#erpAccordion">
+                                            <div class="accordion-body">The architecture treated ERP as the digital
+                                                backbone of the enterprise rather than a set of isolated modules. Shared
+                                                financial impact, reusable services, common standards and extensibility
+                                                were central concerns.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h4 class="accordion-header">
+                                            <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                                    data-bs-target="#erpLeadership">Delivery context
+                                            </button>
+                                        </h4>
+                                        <div id="erpLeadership" class="accordion-collapse collapse"
+                                             data-bs-parent="#erpAccordion">
+                                            <div class="accordion-body">The project combined site leadership, enterprise
+                                                process understanding, architecture, implementation discipline and the
+                                                development of a young engineering team.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="btn btn-outline-primary rounded-pill mt-3" target="_blank"
+                                   href="https://www.linkedin.com/pulse/chosen-strategic-site-what-taught-me-enterprise-leadership-datta-i7cjc">Read
+                                    the LinkedIn project story <i class="bi bi-box-arrow-up-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Row 2: Dedicated project architecture gallery -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="architecture-gallery-card">
+                            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4">
+                                <div>
+                                    <span class="eyebrow">ARCHITECTURE GALLERY</span>
+                                    <h3 class="mb-1">Project Architecture &amp; Design Views</h3>
+                                    <p class="text-secondary mb-0">Use this row for business, application, integration,
+                                        data, security and deployment views from the same project.</p>
+                                </div>
+                                <span class="badge rounded-pill text-bg-light border text-primary px-3 py-2">ERP Architecture</span>
+                            </div>
+
+                            <div class="row g-4">
+                                <div class="col-12 col-lg-6">
+                                    <figure class="architecture-gallery-item h-100 mb-0">
+                                        <div class="architecture-gallery-frame h-100">
+                                            <img src="assets/images/architecture/erp-multisite-1.png"
+                                                 alt="Multi-Site ERP Architecture" class="architecture-gallery-image">
+                                            <figcaption class="pt-3">
+                                                <h5 class="fw-bold mb-1">Multi-Site Enterprise ERP</h5>
+                                                <p class="small text-secondary mb-0">Enterprise view of independent
+                                                    operating entities, shared financial structures, integration flows
+                                                    and consolidated reporting.</p>
+                                            </figcaption>
+                                        </div>
+                                    </figure>
+                                </div>
+
+                                <div class="col-12 col-lg-6">
+                                    <figure class="architecture-gallery-item h-100 mb-0">
+                                        <div class="architecture-gallery-frame h-100">
+                                            <img src="assets/images/architecture/erp-finance-architecture.png"
+                                                 alt="Financial Consolidation Architecture"
+                                                 class="architecture-gallery-image">
+
+                                            <figcaption class="pt-3">
+                                                <h5 class="fw-bold mb-1">Financial Consolidation Architecture</h5>
+
+                                                <p class="small text-secondary mb-0">
+                                                    Enterprise financial consolidation using a shared chart of accounts,
+                                                    standardized financial data flows, validation, aggregation and unified
+                                                    reporting across headquarters and subsidiary entities.
+                                                </p>
+                                            </figcaption>
+                                        </div>
+                                    </figure>
+                                </div>
+
+                                <div class="col-12 col-lg-6">
+                                    <figure class="architecture-gallery-item h-100 mb-0">
+                                        <div class="architecture-gallery-frame h-100">
+                                            <img src="assets/images/architecture/erp-module-integration.png"
+                                                 alt="ERP Module Integration Architecture"
+                                                 class="architecture-gallery-image">
+
+                                            <figcaption class="pt-3">
+                                                <h5 class="fw-bold mb-1">ERP Module Integration</h5>
+
+                                                <p class="small text-secondary mb-0">
+                                                    Integrated view of ERP modules and shared business processes,
+                                                    showing how finance, materials, purchasing, inventory, production,
+                                                    sales, payroll and operational functions exchange transactional
+                                                    and reference data across the enterprise.
+                                                </p>
+                                            </figcaption>
+                                        </div>
+                                    </figure>
+                                </div>
+
+                                <div class="col-12 col-lg-6">
+                                    <figure class="architecture-gallery-item h-100 mb-0">
+                                        <div class="architecture-gallery-frame h-100">
+                                            <img src="assets/images/architecture/erp-technology-architecture.png"
+                                                 alt="ERP Technology Architecture"
+                                                 class="architecture-gallery-image">
+
+                                            <figcaption class="pt-3">
+                                                <h5 class="fw-bold mb-1">Technology Architecture</h5>
+
+                                                <p class="small text-secondary mb-0">
+                                                    Technical view of the ERP platform covering presentation, business logic,
+                                                    database schemas, integration services, deployment infrastructure, security,
+                                                    reporting, and operational runtime components supporting the enterprise system.
+                                                </p>
+                                            </figcaption>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-soft-blue architecture-era" id="iam-architecture">
+            <div class="container-xxl">
+                <div class="era-heading mb-4"><span class="era-year">Modern</span>
+                    <div><span class="eyebrow">IAM • FEDERATION • APPLICATION SECURITY</span>
+                        <h2 class="mb-0">Integrated Enterprise Identity Architecture</h2></div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-xl-5 order-xl-2">
+                        <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                            <img src="assets/images/architecture/iam-federation.png"
+                                 alt="Integrated Enterprise Identity Architecture"
+                                 class="img-fluid rounded-3 w-100"
+                                 style="height: auto; max-height: 560px; object-fit: contain;">
+                        </div>
+                    </div>
+                    <div class="col-xl-7 order-xl-1">
+                        <article class="project-architecture-card">
+                            <div class="card-body">
+                                <div class="project-meta"><span>Identity</span><span>Federation</span><span>Spring Security</span><span>Keycloak</span><span>SAML 2.0</span><span>OIDC</span>
+                                </div>
+                                <h3>Identity as an integrated enterprise system</h3>
+                                <p class="text-secondary">A practical reference architecture integrating Spring Boot 3,
+                                    Spring Security 6, Keycloak 26, Okta SAML 2.0 and Just-In-Time provisioning. The
+                                    focus is not on isolated protocols but on authentication, federation, provisioning
+                                    and lifecycle behavior working as one enterprise IAM system.</p>
+                                <div class="arch-stack my-3">
+                                    <span>OAuth 2.0</span><span>OIDC</span><span>SAML 2.0</span><span>JIT Provisioning</span><span>RBAC</span><span>Trust Boundaries</span>
+                                </div>
+                                <div class="alert alert-primary border-0 mb-0"><i
+                                        class="bi bi-lightbulb me-2"></i><strong>Architecture theme:</strong> Identity
+                                    is platform infrastructure. Application security, federation and user lifecycle must
+                                    be designed together.
+                                </div>
+                                <a class="btn btn-outline-primary rounded-pill mt-3" target="_blank"
+                                   href="https://www.linkedin.com/pulse/demystifying-single-sign-sso-login-logout-spring-boot-binit-datta-nztgc/">View LinkedIn Article <i
+                                        class="bi bi-box-arrow-up-right"></i></a></div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 architecture-era" id="data-architecture">
+            <div class="container-xxl">
+                <div class="era-heading mb-4"><span class="era-year">2026</span>
+                    <div><span class="eyebrow">AZURE • DATA • CONVERSATIONAL ANALYTICS</span>
+                        <h2 class="mb-0">Procurement Analytics Chatbot Architecture</h2></div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-xl-7">
+                        <article class="project-architecture-card">
+                            <div class="card-body">
+                                <div class="project-meta">
+                                    <span>Procurement</span><span>Azure</span><span>Data Lake</span><span>Generative AI</span><span>FinOps</span>
+                                </div>
+                                <h3>Databricks for transformation; lightweight serving for questions</h3>
+                                <p class="text-secondary">A procurement analytics proof of concept using ADLS Gen2,
+                                    Databricks Delta Lake, DuckDB, Python Flask and Anthropic Claude. Business users ask
+                                    questions in English; the application generates and validates SQL, queries curated
+                                    Gold Delta tables, and returns an explanation in business language.</p>
+                                <div class="arch-stack my-3"><span>ADLS Gen2</span><span>Databricks</span><span>Delta Lake</span><span>DuckDB</span><span>Python Flask</span><span>Claude</span>
+                                </div>
+                                <div class="accordion accordion-flush" id="dataAccordion">
+                                    <div class="accordion-item">
+                                        <h4 class="accordion-header">
+                                            <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                                    data-bs-target="#dataDecision">Key architecture decision
+                                            </button>
+                                        </h4>
+                                        <div id="dataDecision" class="accordion-collapse collapse"
+                                             data-bs-parent="#dataAccordion">
+                                            <div class="accordion-body">Databricks performs transformation and prepares
+                                                Gold tables, but it does not need to remain continuously active for
+                                                chatbot serving. DuckDB can query the curated data directly, reducing
+                                                always-on compute and making cost part of the architecture decision.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="btn btn-outline-primary rounded-pill mt-3" target="_blank"
+                                   href="https://www.linkedin.com/pulse/private-enterprise-ai-theory-anymore-building-customer-binit-datta-zv12c/">Read
+                                    the LinkedIn project post <i class="bi bi-box-arrow-up-right"></i></a></div>
+                        </article>
+                    </div>
+                    <div class="col-xl-5">
+                        <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                            <img src="assets/images/architecture/procurement-analytics-ai.png"
+                                 alt="Procurement Analytics Chatbot Architecture"
+                                 class="img-fluid rounded-3 w-100"
+                                 style="height: auto; max-height: 560px; object-fit: contain;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-soft-blue architecture-era" id="ai-architecture">
+            <div class="container-xxl">
+                <div class="era-heading mb-4"><span class="era-year">2026</span>
+                    <div><span class="eyebrow">ENTERPRISE AI • AGENTS • RAG</span>
+                        <h2 class="mb-0">Secure AI Architectures Built Around Enterprise Controls</h2></div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <article class="project-architecture-card">
+                            <div class="card-body">
+                                <div class="project-meta">
+                                    <span>Sourcing-to-Procurement</span><span>Agentic AI</span><span>Human-in-the-Loop</span>
+                                </div>
+                                <h3>Agentic AI Control Tower</h3>
+                                <p class="text-secondary">An enterprise sourcing-to-procurement architecture in which an
+                                    LLM coordinates agents and tools across secured backend services, with policy
+                                    enforcement, human approval, auditability and explicit security boundaries.</p>
+                                <div class="arch-stack my-3"><span>Python</span><span>Flask</span><span>LangGraph</span><span>Anthropic</span><span>Keycloak</span><span>Spring Boot APIs</span><span>Audit</span>
+                                </div>
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/agentic-ai-control-tower.png"
+                                         alt="Agentic AI Control Tower Architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                                <a class="btn btn-outline-primary rounded-pill mt-3" target="_blank"
+                                   href="https://www.linkedin.com/pulse/beyond-chatbot-what-real-enterprise-agentic-ai-looks-like-binit-datta-0xqlc">Architecture
+                                    article <i class="bi bi-box-arrow-up-right"></i></a></div>
+                        </article>
+                    </div>
+                    <div class="col-lg-6">
+                        <article class="project-architecture-card">
+                            <div class="card-body">
+                                <div class="project-meta"><span>Healthcare</span><span>Hospital Operations</span><span>Agentic AI</span>
+                                </div>
+                                <h3>Hospital Chain Agentic AI</h3>
+                                <p class="text-secondary">A hospital-oriented agentic architecture designed around
+                                    identity, roles, APIs and human accountability rather than presenting AI as a
+                                    standalone chatbot. The associated series drills from enterprise architecture to
+                                    Python, LangGraph, role-specific agents, IAM, JWT security and tool execution.</p>
+                                <div class="arch-stack my-3">
+                                    <span>Spring Boot</span><span>Spring AI</span><span>Python</span><span>LangGraph</span><span>IAM</span><span>JWT</span><span>REST APIs</span>
+                                </div>
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/hospitail-chain-agentic-ai.png"
+                                         alt="Hospital Chain Agentic AI Architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                                <a class="btn btn-outline-primary rounded-pill mt-3" target="_blank"
+                                   href="https://www.linkedin.com/pulse/agentic-ai-hospital-chatbot-building-around-identity-roles-datta-wkvic">Architecture
+                                    article <i class="bi bi-box-arrow-up-right"></i></a></div>
+                        </article>
+                    </div>
+                    <div class="col-lg-6">
+                        <article class="project-architecture-card">
+                            <div class="card-body">
+                                <div class="project-meta"><span>Enterprise Knowledge</span><span>RAG</span><span>Security</span>
+                                </div>
+                                <h3>Enterprise-Ready RAG Explainer</h3>
+                                <p class="text-secondary">A RAG architecture that makes identity, authorization,
+                                    auditability, secure configuration, document governance and operational visibility
+                                    first-class concerns rather than afterthoughts.</p>
+                                <div class="arch-stack my-3">
+                                    <span>Python 3.12</span><span>Flask</span><span>Keycloak 26</span><span>ChromaDB</span><span>Sentence Transformers</span><span>Claude</span><span>SSE</span>
+                                </div>
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/rag.png"
+                                         alt="Enterprise-Ready RAG Architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                                <a class="btn btn-outline-primary rounded-pill mt-3" target="_blank"
+                                   href="https://www.linkedin.com/pulse/rag-just-vectors-building-enterprise-ready-explainer-python-datta-0hnyc">Architecture
+                                    article <i class="bi bi-box-arrow-up-right"></i></a></div>
+                        </article>
+                    </div>
+                    <div class="col-lg-6">
+                        <article class="project-architecture-card">
+                            <div class="card-body">
+                                <div class="project-meta">
+                                    <span>Architecture Method</span><span>Production Engineering</span><span>Governance</span>
+                                </div>
+                                <h3>AI must live inside the enterprise nervous system</h3>
+                                <p class="text-secondary">The recurring architecture principle across these projects is
+                                    that AI does not repeal enterprise engineering. IAM, security, observability,
+                                    DevSecOps, data governance, FinOps, compliance and production operations remain part
+                                    of the architecture.</p>
+                                <div class="list-group list-group-flush architecture-principles">
+                                    <div class="list-group-item"><i class="bi bi-shield-check"></i>Security and identity
+                                        are designed in, not bolted on.
+                                    </div>
+                                    <div class="list-group-item"><i class="bi bi-activity"></i>Observability and
+                                        auditability are architecture components.
+                                    </div>
+                                    <div class="list-group-item"><i class="bi bi-currency-dollar"></i>Cost and runtime
+                                        economics influence design choices.
+                                    </div>
+                                    <div class="list-group-item"><i class="bi bi-person-check"></i>Human accountability
+                                        remains explicit for consequential actions.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="tab-pane fade" id="principles">
+        <section class="py-5">
+            <div class="container-xxl">
+                <div class="section-intro"><span class="eyebrow">HOW I APPROACH ARCHITECTURE</span>
+                    <h2>Architecture is a bridge between business consequence and engineering detail.</h2>
+                    <p>These principles summarize the through-line from early ERP work to cloud-native identity and
+                        modern AI systems.</p></div>
+                <div class="row g-4 mt-2">
+                    <div class="col-md-6 col-xl-4">
+                        <div class="feature-card"><i class="bi bi-building-check"></i>
+                            <h3>Start with the operating model</h3>
+                            <p>Understand the business process, users, money movement, controls, risk and organizational
+                                boundaries before choosing technology.</p></div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="feature-card"><i class="bi bi-diagram-2"></i>
+                            <h3>Design the whole system</h3>
+                            <p>Application, data, integration, identity, security, observability, cost and operations
+                                belong in the same architecture conversation.</p></div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="feature-card"><i class="bi bi-code-slash"></i>
+                            <h3>Stay close to implementation</h3>
+                            <p>An architecture is credible when it survives code, configuration, integration failures,
+                                security constraints and production realities.</p></div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="feature-card"><i class="bi bi-people"></i>
+                            <h3>Communicate across levels</h3>
+                            <p>Translate C-suite priorities into product choices, delivery plans and engineering
+                                decisions without losing intent between layers.</p></div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="feature-card"><i class="bi bi-arrows-angle-expand"></i>
+                            <h3>Design for change</h3>
+                            <p>Favor modularity, extension points, standards and clear contracts so systems can evolve
+                                as business requirements change.</p></div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="feature-card"><i class="bi bi-clipboard2-check"></i>
+                            <h3>Engineer for consequences</h3>
+                            <p>For enterprise systems, failure modes, auditability, compliance, availability, security
+                                and cost are architecture—not footnotes.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="tab-pane fade" id="archive-map">
+        <section class="py-5" id="archive">
+            <div class="container-xxl">
+                <div class="section-intro"><span class="eyebrow">LIVING ARCHITECTURE ARCHIVE</span>
+                    <h2>Built to grow project by project.</h2>
+                    <p>I have left explicit slots for the architectures you want to add from 1995 onward. Each can
+                        become a full project case study with the business problem, architecture decisions, technology
+                        stack, outcomes and one or more diagrams.</p></div>
+                <div class="row g-4 mt-2">
+                    <div class="col-md-6 col-xl-4">
+                        <div class="archive-placeholder-card"><i class="bi bi-plus-square"></i>
+                            <h3 class="h5 mt-3">1995–2000 • Early ERP & Trading</h3>
+                            <p class="text-secondary">Turf club / entertainment ERP, pharma trading, medical equipment
+                                servicing and related early enterprise systems.</p></div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="archive-placeholder-card"><i class="bi bi-plus-square"></i>
+                            <h3 class="h5 mt-3">Manufacturing & Industrial</h3>
+                            <p class="text-secondary">Steel manufacturing, coal mining and large multi-module ERP
+                                architecture.</p></div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="archive-placeholder-card"><i class="bi bi-plus-square"></i>
+                            <h3 class="h5 mt-3">Telecom & Financial Services</h3>
+                            <p class="text-secondary">Telecom, home mortgage and enterprise integration
+                                architectures.</p></div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="archive-placeholder-card"><i class="bi bi-plus-square"></i>
+                            <h3 class="h5 mt-3">Healthcare & Pharmacy</h3>
+                            <p class="text-secondary">Pharmacy benefits, healthcare technology, health insurance and
+                                pharmacy retail platforms.</p></div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="archive-placeholder-card"><i class="bi bi-plus-square"></i>
+                            <h3 class="h5 mt-3">Retail, eCommerce & Consumer</h3>
+                            <p class="text-secondary">Retail/eCommerce, consumer electronics, restaurant chain and
+                                nationwide car wash technology architectures.</p></div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="archive-placeholder-card"><i class="bi bi-plus-square"></i>
+                            <h3 class="h5 mt-3">Supply Chain & Source-to-Pay</h3>
+                            <p class="text-secondary">Global supply chain SaaS, sourcing-to-payment, integration and
+                                modern Agentic AI extensions.</p></div>
+                    </div>
+                </div>
+                <div class="alert alert-info mt-4 mb-0"><i class="bi bi-images me-2"></i><strong>Image
+                    convention:</strong> add diagrams under <code>assets/images/architecture/</code>. Each project card
+                    is already structured so a placeholder can be replaced by an actual PNG, SVG or WebP architecture
+                    image without redesigning the page.
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+<!-- =========================================================
+     LINKEDIN EXPERIENCE-BASED ARCHITECTURE JOURNEY
+     Existing page content above remains unchanged.
+========================================================== -->
+<section class="py-5 bg-white border-top" id="linkedin-architecture-journey">
+    <div class="container-xxl">
+        <div class="section-intro mb-5">
+            <span class="eyebrow">ARCHITECTURE EXPERIENCE • 1995 → PRESENT</span>
+            <h2 class="mt-2">Architecture work across three decades of enterprise transformation.</h2>
+            <p class="text-secondary fs-5 mb-0">A chronological portfolio derived from LinkedIn experience, organized as
+                architecture case-study starters. Each engagement captures the business context, architectural
+                responsibility, technology generation and a dedicated slot for one or more project diagrams.</p>
+        </div>
+
+        <div class="alert alert-primary d-flex gap-3 align-items-start rounded-4 mb-5" role="alert">
+            <i class="bi bi-info-circle-fill fs-4"></i>
+            <div><strong>How to use this section:</strong> add architecture diagrams under <code>assets/images/architecture/</code>
+                and replace any placeholder panel with the corresponding image. The earlier featured architecture
+                content remains above this section unchanged.
+            </div>
+        </div>
+
+        <div class="accordion architecture-career-accordion" id="architectureCareerAccordion">
+
+            <!-- 1995–1996 -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-rpk-heading">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#arch-rpk"
+                            aria-expanded="true" aria-controls="arch-rpk"><span
+                            class="me-3 badge text-bg-primary rounded-pill">1995–1996</span><span><strong>System Engineer — ERP Architecture & Development</strong><br><small
+                            class="text-secondary">RPK Software Pvt. Ltd • Kolkata, India</small></span></button>
+                </h2>
+                <div id="arch-rpk" class="accordion-collapse collapse show" aria-labelledby="arch-rpk-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4 align-items-stretch">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3">
+                                    <span>ERP</span><span>Oracle</span><span>Finance</span><span>Materials</span><span>Sales</span><span>Inventory</span><span>Club Operations</span>
+                                </div>
+                                <h3 class="h4">Enterprise systems built from first principles</h3>
+                                <p class="text-secondary">Hands-on architecture and engineering for custom ERP systems,
+                                    including the Royal Calcutta Turf Club platform. Responsibilities spanned
+                                    requirements analysis, normalized data modeling, transactional design, PL/SQL,
+                                    enterprise forms and reports, and production delivery under a Waterfall SDLC.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-database-check"></i> Designed
+                                        normalized Oracle 7.x schemas and PL/SQL procedures for transaction-heavy
+                                        operations.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-grid-3x3-gap"></i> Architected
+                                        Finance, Materials Management, Sales, Inventory and Club Management modules.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-boxes"></i> Contributed reusable
+                                        architecture and engineering patterns to RPK's branded ERP product line.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-speedometer2"></i> Served as a
+                                        technical reference point for data modeling, design decisions and performance
+                                        optimization.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack">
+                                    <span>Oracle 7.x</span><span>PL/SQL</span><span>Developer 2000</span><span>Forms & Reports</span><span>SQL</span><span>UNIX</span><span>Waterfall SDLC</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/rpk-rctc-erp.png"
+                                         alt="ERP architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1997–1999 -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-indicon-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-indicon" aria-expanded="false" aria-controls="arch-indicon"><span
+                            class="me-3 badge text-bg-primary rounded-pill">1997–1999</span><span><strong>Technical Team Lead</strong><br><small
+                            class="text-secondary">Indicon Management Pvt. Ltd</small></span></button>
+                </h2>
+                <div id="arch-indicon" class="accordion-collapse collapse" aria-labelledby="arch-indicon-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3">
+                                    <span>ERP</span><span>J2EE</span><span>Oracle 8i</span><span>International Clients</span>
+                                </div>
+                                <h3 class="h4">Business-to-engineering translation for custom ERP delivery</h3>
+                                <p class="text-secondary">Led analysis, system design and technical delivery for ERP
+                                    implementations across finance, inventory, purchasing and operations, while acting
+                                    as the primary technical interface for clients including Electro Medical Ltd and KDS
+                                    Group.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-diagram-2"></i> Designed J2EE web
+                                        and server components using Servlets, JSP and EJB 1.1.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-database-gear"></i> Built and
+                                        optimized Oracle 8i SQL/PL-SQL layers for production transaction processing.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-people"></i> Mentored developers,
+                                        conducted code reviews and enforced engineering discipline.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack"><span>Oracle 8i</span><span>SQL</span><span>PL/SQL</span><span>EJB 1.1</span><span>JSP</span><span>Servlets</span><span>Tomcat</span><span>UNIX</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/indicon-j2ee-erp.png"
+                                         alt="J2EE ERP architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2005–2006 -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-bellsouth-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-bellsouth"><span class="me-3 badge text-bg-primary rounded-pill">2005–2006</span><span><strong>Team Lead – Technical Architect</strong><br><small
+                            class="text-secondary">Accenture • Client: BellSouth (AT&amp;T) • Atlanta, GA</small></span>
+                    </button>
+                </h2>
+                <div id="arch-bellsouth" class="accordion-collapse collapse" aria-labelledby="arch-bellsouth-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3">
+                                    <span>Telecom</span><span>Broadband Registration</span><span>J2EE</span><span>EJB</span><span>Provisioning</span>
+                                </div>
+                                <h3 class="h4">Precision-engineered broadband registration backbone</h3>
+                                <p class="text-secondary">Architected BellSouth's Broadband Registration Service, a
+                                    shared J2EE platform for customer onboarding, eligibility validation and service
+                                    activation across telecom systems.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-box"></i> Designed approximately 40
+                                        Entity and Session Beans for registration and provisioning workflows.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-arrow-repeat"></i> Defined
+                                        transactional boundaries, persistence patterns and high-concurrency interaction
+                                        models.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-diagram-3"></i> Coordinated
+                                        upstream/downstream integrations, schema evolution and backward compatibility.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-people"></i> Led and mentored a
+                                        10-engineer team while remaining hands-on in defect resolution.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack"><span>J2EE</span><span>EJB</span><span>Entity Beans</span><span>Session Beans</span><span>Transactional Services</span><span>Enterprise Integration</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/bellsouth-broadband-registration.png"
+                                         alt="Broadband registration backbone architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2006–2007 -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-wf-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-wf"><span
+                            class="me-3 badge text-bg-primary rounded-pill">2006–2007</span><span><strong>Lead Designer / Architect</strong><br><small
+                            class="text-secondary">Wells Fargo • West Des Moines, IA</small></span></button>
+                </h2>
+                <div id="arch-wf" class="accordion-collapse collapse" aria-labelledby="arch-wf-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3"><span>Home Mortgage</span><span>SOA</span><span>Loan Origination</span><span>Vendor Processing</span>
+                                </div>
+                                <h3 class="h4">CORE loan-origination platform and third-party vendor orchestration</h3>
+                                <p class="text-secondary">Served as Lead Designer and Architect on the CORE enterprise
+                                    loan-origination platform spanning Customer-Facing, Deal Processing and Deal
+                                    Decisioning tiers.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-box-arrow-in-right"></i>
+                                        Architected vendor-processing services for Flood Certification, Title and
+                                        Property Appraisal.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-diagram-2"></i> Translated business
+                                        requirements into service contracts, data models and interaction flows.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-shield-check"></i> Functioned as a
+                                        technical quality authority across internal teams and third-party delivery
+                                        partners.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-arrow-left-right"></i> Reviewed
+                                        integration logic, exception handling, transaction boundaries and security.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack"><span>J2EE</span><span>Web Services</span><span>SOA</span><span>Service Contracts</span><span>Enterprise Integration</span><span>Loan Origination</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/wells-fargo-core-soa.png"
+                                         alt="Loan origination and vendor processing SOA architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2007 -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-esi-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-esi"><span class="me-3 badge text-bg-primary rounded-pill">2007</span><span><strong>Lead J2EE Designer / Developer</strong><br><small
+                            class="text-secondary">Express Scripts • Minneapolis, MN</small></span></button>
+                </h2>
+                <div id="arch-esi" class="accordion-collapse collapse" aria-labelledby="arch-esi-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3">
+                                    <span>Pharmacy Benefits</span><span>Rebate MIS</span><span>Java 6</span><span>Legacy Modernization</span>
+                                </div>
+                                <h3 class="h4">Rebate analysis, approvals and financial reconciliation</h3>
+                                <p class="text-secondary">Enhanced an enterprise MIS application supporting rebate
+                                    analysis, approval workflows and reconciliation across complex Super Client,
+                                    Division, Plan Type and Group hierarchies.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-layers"></i> Improved a proprietary
+                                        Servlet MVC framework's controller, request lifecycle and validation patterns.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-database"></i> Designed
+                                        presentation, business and persistence components using JSP, Servlets, EJB,
+                                        Hibernate and Oracle 10g.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-speedometer2"></i> Tuned SQL/PL-SQL
+                                        for reporting and approvals over large transactional datasets.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack">
+                                    <span>Java 6</span><span>Servlet MVC</span><span>JSP</span><span>EJB</span><span>Hibernate</span><span>Oracle 10g</span><span>JBoss</span><span>WebSphere</span><span>JUnit</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/express-scripts-rebate-mis.png"
+                                         alt="Rebate MIS architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2008 -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-uhc-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-uhc"><span class="me-3 badge text-bg-primary rounded-pill">2008</span><span><strong>J2EE Application Architect</strong><br><small
+                            class="text-secondary">Ovation, a UnitedHealthcare Company • Minneapolis–St. Paul</small></span>
+                    </button>
+                </h2>
+                <div id="arch-uhc" class="accordion-collapse collapse" aria-labelledby="arch-uhc-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3"><span>Healthcare</span><span>Provider Intelligence</span><span>Search</span><span>Analytics</span>
+                                </div>
+                                <h3 class="h4">Provider Intelligence & Search for clinical referral workflows</h3>
+                                <p class="text-secondary">Architected a provider search and analytics platform used by
+                                    clinical staff to identify best-fit physicians and facilities based on specialty,
+                                    geography, performance, quality and outcomes.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-funnel"></i> Designed multi-source
+                                        provider ingestion and normalization pipelines.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-search"></i> Defined provider
+                                        scoring and Apache Lucene indexing strategy.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-shield-check"></i> Built secure
+                                        Spring MVC separation across controller/service/DAO layers with validation and
+                                        logging.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack">
+                                    <span>Java 6</span><span>Spring 2.5</span><span>Spring MVC</span><span>Hibernate</span><span>Oracle</span><span>Apache Lucene</span><span>WebLogic 8</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/uhc-provider-intelligence.png"
+                                         alt="Provider intelligence and search architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2009 Jostens -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-jostens-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-jostens"><span
+                            class="me-3 badge text-bg-primary rounded-pill">2009</span><span><strong>J2EE Application Architect — YearbookAvenue</strong><br><small
+                            class="text-secondary">Jostens</small></span></button>
+                </h2>
+                <div id="arch-jostens" class="accordion-collapse collapse" aria-labelledby="arch-jostens-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3">
+                                    <span>Publishing</span><span>WYSIWYG</span><span>Spring</span><span>Flex</span><span>XML</span>
+                                </div>
+                                <h3 class="h4">Large-scale web-based yearbook creation platform</h3>
+                                <p class="text-secondary">Led architecture for a template-driven WYSIWYG page-design
+                                    platform supporting schools, colleges and universities, with reusable layouts, rich
+                                    content and historical project retention.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-easel2"></i> Architected Adobe Flex
+                                        3.x client interactions for images, shapes, rich text and reusable layouts.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-braces"></i> Defined XML service
+                                        contracts and standardized JiBX marshalling/unmarshalling.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-clock-history"></i> Designed
+                                        retention/versioning patterns for reuse across academic years.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack"><span>Java 5/6</span><span>J2EE</span><span>Spring</span><span>Hibernate</span><span>Adobe Flex 3.x</span><span>XML</span><span>JiBX</span><span>Groovy</span><span>Grails</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/jostens-yearbookavenue.png"
+                                         alt="Yearbook creation platform architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2009–2010 Pearson -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-pearson-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-pearson"><span class="me-3 badge text-bg-primary rounded-pill">2009–2010</span><span><strong>Senior J2EE Architect / Developer</strong><br><small
+                            class="text-secondary">Pearson VUE Professional Center • Bloomington / Minneapolis, MN</small></span>
+                    </button>
+                </h2>
+                <div id="arch-pearson" class="accordion-collapse collapse" aria-labelledby="arch-pearson-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3">
+                                    <span>Global Operations</span><span>Capacity Management</span><span>SOA</span><span>Web Services</span>
+                                </div>
+                                <h3 class="h4">Centralized global test-center capacity management</h3>
+                                <p class="text-secondary">Replaced fragmented, test-center-specific desktop tools with a
+                                    unified web platform for managing availability across regions and countries.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-globe2"></i> Centralized global
+                                        capacity visibility and scheduling workflows.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-hdd-network"></i> Built
+                                        standardized availability APIs using Apache CXF, JAX-WS and JAXB.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-window"></i> Delivered web UI with
+                                        Apache MyFaces and service/persistence layers using Spring and Hibernate.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack">
+                                    <span>J2EE</span><span>Apache CXF</span><span>JAX-WS</span><span>JAXB</span><span>Apache MyFaces</span><span>Spring</span><span>Hibernate</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/pearson-capacity-management.png"
+                                         alt="Global test-center capacity management architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2010 BCBSA -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-bcbsa-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-bcbsa"><span
+                            class="me-3 badge text-bg-primary rounded-pill">2010</span><span><strong>Application Architect</strong><br><small
+                            class="text-secondary">Blue Cross Blue Shield Association • Chicago, IL</small></span>
+                    </button>
+                </h2>
+                <div id="arch-bcbsa" class="accordion-collapse collapse" aria-labelledby="arch-bcbsa-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3"><span>Health Insurance</span><span>Enterprise Data Warehouse</span><span>Claims</span><span>Governance</span>
+                                </div>
+                                <h3 class="h4">Blue Health Intelligence claims ingestion and certification</h3>
+                                <p class="text-secondary">Architected Java/Spring ingestion pipelines enabling member
+                                    plans to submit, cleanse, enrich, validate and certify large-scale medical and
+                                    pharmacy claims data on a monthly cadence.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-funnel-fill"></i> Defined
+                                        multi-stage cleansing, enrichment, verification and certification workflows.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-file-earmark-lock"></i> Balanced
+                                        healthcare data governance, auditability, integrity and scale.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-arrow-left-right"></i> Integrated
+                                        internal validation with external actuarial and regulatory partners including
+                                        Milliman.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack">
+                                    <span>Java 6</span><span>Spring 2.5/3.0</span><span>Oracle</span><span>Batch</span><span>ETL</span><span>Data Warehouse</span><span>Healthcare Data Governance</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/bcbsa-bhi-edw.png"
+                                         alt="Healthcare claims ingestion and enterprise data warehouse architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2006–2012 Saven -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-saven-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-saven"><span
+                            class="me-3 badge text-bg-primary rounded-pill">2006–2012</span><span><strong>Senior Technology Roadmap Consultant / Senior Architect</strong><br><small
+                            class="text-secondary">Saven Technologies • Greater Chicago Area</small></span></button>
+                </h2>
+                <div id="arch-saven" class="accordion-collapse collapse" aria-labelledby="arch-saven-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3"><span>Consulting</span><span>Financial BI</span><span>Spring</span><span>Architecture Roadmaps</span>
+                                </div>
+                                <h3 class="h4">Client architecture delivery plus proprietary financial BI platform</h3>
+                                <p class="text-secondary">Delivered enterprise architecture and technology roadmaps for
+                                    Fortune-scale clients while serving as foundational architect for Saven's internal
+                                    Financial Data Business Intelligence Platform.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-bar-chart-line"></i> Designed
+                                        end-to-end data ingestion, processing, API and executive reporting workflows.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-braces-asterisk"></i> Established
+                                        reusable Java/Spring/API design practices.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-arrow-down-up"></i> Bridged
+                                        consulting delivery and internal product engineering.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack">
+                                    <span>Java 5–8</span><span>Spring Framework</span><span>HTML</span><span>JavaScript</span><span>Enterprise APIs</span><span>BI</span><span>Data Processing</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/saven-financial-bi.png"
+                                         alt="Financial BI platform architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2010–2012 Nokia -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-nokia-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-nokia"><span
+                            class="me-3 badge text-bg-primary rounded-pill">2010–2012</span><span><strong>J2EE Architect / Oracle Performance Engineer</strong><br><small
+                            class="text-secondary">Nokia (Navteq Location &amp; Content) • Chicago Area</small></span>
+                    </button>
+                </h2>
+                <div id="arch-nokia" class="accordion-collapse collapse" aria-labelledby="arch-nokia-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3">
+                                    <span>Location Data</span><span>GPS Probe Data</span><span>Oracle</span><span>Hadoop</span><span>Messaging</span>
+                                </div>
+                                <h3 class="h4">Scalability and performance for GPS probe-data processing</h3>
+                                <p class="text-secondary">Focused on productionization, data-access performance and
+                                    operational stability of a Java platform processing cellular GPS probe data to
+                                    enhance digital road maps.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-geo-alt"></i> Supported
+                                        Hadoop-assisted GPS point analysis and road-cluster generation.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-database-gear"></i> Tuned Oracle
+                                        PL/SQL, analytical queries and data-access patterns.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-envelope-paper"></i> Diagnosed
+                                        bottlenecks across database, JMS/QPid messaging and application tiers.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack">
+                                    <span>Java 8</span><span>Spring</span><span>Hibernate</span><span>JDBC</span><span>Oracle</span><span>PL/SQL</span><span>Hadoop</span><span>JMS/QPid</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/nokia-probe-data.png"
+                                         alt="GPS probe data processing architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2012–2014 Apple -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-apple-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-apple"><span
+                            class="me-3 badge text-bg-primary rounded-pill">2012–2014</span><span><strong>Senior Consultant / Architect</strong><br><small
+                            class="text-secondary">Pivotal Software • Consulting engagement with Apple • Cupertino, CA</small></span>
+                    </button>
+                </h2>
+                <div id="arch-apple" class="accordion-collapse collapse" aria-labelledby="arch-apple-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3">
+                                    <span>BI Platform</span><span>Architecture Governance</span><span>Spring 4</span><span>CoAE</span>
+                                </div>
+                                <h3 class="h4">Institutionalizing backend architecture for enterprise BI</h3>
+                                <p class="text-secondary">Designed, standardized and institutionalized backend
+                                    architecture for a large in-house BI dashboard platform, while creating a Center of
+                                    Architectural Excellence for engineering consistency and platform
+                                    sustainability.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-building-gear"></i> Established
+                                        reference designs, architecture standards and governance practices.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-layers-half"></i> Defined Spring 4
+                                        layering, dependency management, configuration and service patterns.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-mortarboard"></i> Drove knowledge
+                                        transfer through design reviews, mentoring and architecture walkthroughs.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack"><span>Java 8</span><span>Spring 4</span><span>Enterprise Architecture</span><span>Architecture Governance</span><span>Platform Enablement</span><span>Engineering Mentorship</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/apple-bi-coae.png"
+                                         alt="Enterprise BI platform and Center of Architectural Excellence architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2014–2017 Sears -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-sears-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-sears"><span
+                            class="me-3 badge text-bg-primary rounded-pill">2014–2017</span><span><strong>Senior Application Architect – eCommerce Platforms</strong><br><small
+                            class="text-secondary">Sears Holdings • Hoffman Estates, IL</small></span></button>
+                </h2>
+                <div id="arch-sears" class="accordion-collapse collapse" aria-labelledby="arch-sears-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3">
+                                    <span>Retail</span><span>eCommerce</span><span>PLP/PDP</span><span>High Traffic</span><span>AWS</span>
+                                </div>
+                                <h3 class="h4">Revenue-critical Product Listing and Product Detail platforms</h3>
+                                <p class="text-secondary">Owned architecture and production reliability for two of
+                                    Sears' highest-traffic customer experiences, orchestrating pricing, inventory,
+                                    promotions, reviews, bundles and personalization services.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-lightning-charge"></i> Supported
+                                        roughly 50,000 calls per minute during peak Black Friday periods.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-bug"></i> Reduced MTTR using deep
+                                        x-Verbose diagnostics and data-quality routing diagnostics.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-cloud"></i> Advanced early AWS,
+                                        microservices and Spring Boot adoption.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-speedometer"></i> Led large-scale
+                                        SOASTA performance testing ahead of seasonal peaks.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack">
+                                    <span>Java</span><span>Spring Boot</span><span>Microservices</span><span>AWS</span><span>PLP</span><span>PDP</span><span>Performance Engineering</span><span>SOASTA</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/sears-plp-pdp.png"
+                                         alt="High-traffic eCommerce PLP and PDP architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2017–2018 West Monroe -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-wmp-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-wmp"><span
+                            class="me-3 badge text-bg-primary rounded-pill">2017–2018</span><span><strong>Principal Consultant / Enterprise Business Architect</strong><br><small
+                            class="text-secondary">West Monroe Partners • Chicago, IL</small></span></button>
+                </h2>
+                <div id="arch-wmp" class="accordion-collapse collapse" aria-labelledby="arch-wmp-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3"><span>Retail</span><span>Due Diligence</span><span>Cloud Modernization</span><span>Reference Architecture</span>
+                                </div>
+                                <h3 class="h4">Turning due-diligence findings into executable modernization
+                                    roadmaps</h3>
+                                <p class="text-secondary">Combined enterprise-business architecture with hands-on
+                                    cloud-native engineering, translating diligence findings into production-oriented
+                                    modernization programs.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-cloud-arrow-up"></i> Designed
+                                        retail microservices on Azure using Spring Boot and Java 11.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-diagram-3-fill"></i> Built a
+                                        reusable AWS reference architecture for Java/Spring Boot platforms.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-git"></i> Established engineering
+                                        standards and CI pipelines for modernization delivery.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack">
+                                    <span>Java 11</span><span>Spring Boot</span><span>Azure</span><span>AWS</span><span>Microservices</span><span>CI/CD</span><span>Reference Architecture</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/west-monroe-cloud-modernization.png"
+                                         alt="Cloud modernization and Java Spring reference architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2018 Solstice -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-solstice-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-solstice"><span
+                            class="me-3 badge text-bg-primary rounded-pill">2018</span><span><strong>Principal Technical Consultant | Cloud &amp; Microservices Architecture</strong><br><small
+                            class="text-secondary">Solstice • Chicago, IL</small></span></button>
+                </h2>
+                <div id="arch-solstice" class="accordion-collapse collapse" aria-labelledby="arch-solstice-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3"><span>AWS</span><span>Containers</span><span>Microservices</span><span>ECS</span><span>EKS</span>
+                                </div>
+                                <h3 class="h4">Rapid AWS-native container modernization</h3>
+                                <p class="text-secondary">Delivered high-impact cloud transformation engagements,
+                                    establishing production-ready AWS container and microservices foundations within
+                                    months.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-box-seam"></i> Designed ECS-first
+                                        and early EKS container platforms using VPC, ALB, Auto Scaling, EC2, RDS and
+                                        CloudWatch.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-scissors"></i> Led
+                                        monolith-to-microservices decomposition with Spring Boot and Spring Cloud.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-infinity"></i> Established CI/CD,
+                                        container image, environment promotion and observability practices.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-people-fill"></i> Mentored 30+
+                                        cloud-native engineers with reusable service templates and architecture
+                                        standards.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack"><span>AWS</span><span>ECS</span><span>EKS</span><span>VPC</span><span>ALB</span><span>EC2</span><span>RDS</span><span>CloudWatch</span><span>Spring Boot</span><span>Spring Cloud</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/solstice-aws-containers.png"
+                                         alt="AWS container and microservices architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2018–2021 Walgreens -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-walgreens-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-walgreens"><span class="me-3 badge text-bg-primary rounded-pill">2018–2021</span><span><strong>Technical Architect, Digital Engineering</strong><br><small
+                            class="text-secondary">Walgreens Boots Alliance • Deerfield, IL</small></span></button>
+                </h2>
+                <div id="arch-walgreens" class="accordion-collapse collapse" aria-labelledby="arch-walgreens-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3">
+                                    <span>Retail Search</span><span>Pharmacy Search</span><span>Elasticsearch</span><span>AKS</span><span>PLP/PDP</span>
+                                </div>
+                                <h3 class="h4">National-scale search and commerce architecture</h3>
+                                <p class="text-secondary">Owned the enterprise Search Platform for walgreens.com across
+                                    retail search (~50K SKUs) and pharmacy search (multi-million indexed records), while
+                                    also serving as lead architect for high-traffic PLP and PDP surfaces.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-search"></i> Led Elasticsearch 2.x
+                                        → 6.x migration, mapping/analyzer redesign and relevance optimization.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-arrow-repeat"></i> Executed
+                                        zero-downtime upgrades with aliases, rolling upgrades and shard rebalancing.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-boxes"></i> Integrated search,
+                                        pricing, inventory, promotions and content services under strict SLAs.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-cloud-check"></i> Contributed AKS
+                                        HA/DR, resiliency and environment-isolation architecture.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack"><span>Elasticsearch</span><span>Spring Boot</span><span>Spring Cloud</span><span>Azure AKS</span><span>Java</span><span>APIs</span><span>HA/DR</span><span>Retail Search</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/walgreens-search-commerce.png"
+                                         alt="National-scale retail and pharmacy search commerce architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2021–2026 Manhattan -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-manh-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-manh"><span
+                            class="me-3 badge text-bg-primary rounded-pill">2021–2026</span><span><strong>Technical Director, R&amp;D | Identity, Cloud &amp; Platform Architecture</strong><br><small
+                            class="text-secondary">Manhattan Associates • Chicago, IL</small></span></button>
+                </h2>
+                <div id="arch-manh" class="accordion-collapse collapse" aria-labelledby="arch-manh-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3">
+                                    <span>IAM</span><span>Keycloak</span><span>Spring Boot</span><span>GKE</span><span>Google Pub/Sub</span><span>SaaS</span>
+                                </div>
+                                <h3 class="h4">Enterprise IAM and observability platform transformation</h3>
+                                <p class="text-secondary">Led replacement of a legacy Spring Security authorization
+                                    server with a modern Keycloak-based IAM platform supporting enterprise multi-IdP
+                                    requirements, SaaS configurability and global customer migrations.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-shield-lock"></i> Evaluated and
+                                        championed Keycloak through feature-matched and forward-looking proofs of
+                                        concept.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-code-square"></i>
+                                        Reverse-engineered legacy authorization logic into explicit migration
+                                        requirements.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-cloud"></i> Designed production IAM
+                                        for Java 11–21 / Spring Boot microservices on Google Cloud GKE.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-activity"></i> Enabled high-volume
+                                        telemetry analytics through Google Pub/Sub for IAM, API, messaging and latency
+                                        KPIs.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-arrow-up-right-circle"></i> Reached
+                                        approximately 95% migration from the legacy IAM platform.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack">
+                                    <span>Keycloak</span><span>OAuth2/OIDC</span><span>SAML 2.0</span><span>Java 11–21</span><span>Spring Boot</span><span>GKE</span><span>Google Pub/Sub</span><span>Telemetry</span><span>Multi-IdP</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/manhattan-iam-platform.png"
+                                         alt="Enterprise IAM and observability platform architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2026–Present TMSW -->
+            <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+                <h2 class="accordion-header" id="arch-tmsw-heading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#arch-tmsw"><span class="me-3 badge text-bg-primary rounded-pill">2026–Present</span><span><strong>Principal Enterprise Architect | Application Portfolio, Cloud, IAM &amp; SaaS Transformation</strong><br><small
+                            class="text-secondary">The Marketing Store Worldwide (TMSW) • Chicago, IL</small></span>
+                    </button>
+                </h2>
+                <div id="arch-tmsw" class="accordion-collapse collapse" aria-labelledby="arch-tmsw-heading"
+                     data-bs-parent="#architectureCareerAccordion">
+                    <div class="accordion-body p-4 p-lg-5">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="project-meta mb-3"><span>Enterprise Architecture</span><span>27+ Applications</span><span>4–5+ SaaS Platforms</span><span>Azure</span><span>IAM</span><span>Portfolio Modernization</span>
+                                </div>
+                                <h3 class="h4">Enterprise-wide modernization across applications, cloud, IAM and
+                                    SaaS</h3>
+                                <p class="text-secondary">Expanded from platform-focused technical leadership into
+                                    enterprise-wide architecture ownership across an application portfolio, strategic
+                                    SaaS platforms, cloud migration, security, data movement, integration and
+                                    modernization strategy.</p>
+                                <ul class="list-group list-group-flush architecture-principles mb-3">
+                                    <li class="list-group-item px-0"><i class="bi bi-grid-1x2"></i> Lead architecture
+                                        across 27+ business applications and 4–5+ strategic SaaS platforms.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-cloud-arrow-up-fill"></i> Drive
+                                        legacy on-premises modernization toward Microsoft Azure with sequencing, risk,
+                                        cost and continuity considerations.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-person-lock"></i> Strengthen SSO,
+                                        federation, RBAC, lifecycle governance and SaaS identity maturity.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-box-arrow-in-down-right"></i>
+                                        Assess SaaS through utilization, integration, data movement, security posture,
+                                        operational ownership, vendor dependency and ROI.
+                                    </li>
+                                    <li class="list-group-item px-0"><i class="bi bi-people"></i> Translate priorities
+                                        across executives, product owners, engineering, infrastructure, cybersecurity,
+                                        data, operations, vendors and implementation partners.
+                                    </li>
+                                </ul>
+                                <div class="arch-stack">
+                                    <span>Azure</span><span>Java</span><span>Spring Boot</span><span>Kubernetes</span><span>IAM</span><span>SaaS</span><span>APIs</span><span>Distributed Systems</span><span>Enterprise Integration</span><span>Portfolio Architecture</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="architecture-image-container h-100 d-flex align-items-center justify-content-center p-3 bg-white border rounded-4 shadow-sm">
+                                    <img src="assets/images/architecture/tmsw-enterprise-portfolio.png"
+                                         alt="Enterprise application portfolio, Azure, SaaS, IAM and modernization architecture"
+                                         class="img-fluid rounded-3 w-100"
+                                         style="height: auto; max-height: 560px; object-fit: contain;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer mt-5">
+    <div class="container-xxl py-5">
+        <div class="row g-4 align-items-start">
+            <div class="col-lg-6">
+                <div class="d-flex align-items-center gap-2 mb-3"><span class="brand-badge">BD</span><strong
+                        class="fs-5">Binit Datta</strong></div>
+                <p class="text-secondary mb-0">Enterprise technology leader, architect, author and educator connecting
+                    business context with secure modern engineering.</p></div>
+            <div class="col-lg-3"><h6>Explore</h6><a href="business-verticals.html">Business Verticals</a><a
+                    href="architecture.html">Architecture</a><a href="technology.html">Technology</a><a
+                    href="books.html">Books</a><a href="articles.html">Articles</a></div>
+            <div class="col-lg-3"><h6>Connect</h6><a href="https://www.linkedin.com/in/binitdatta/" target="_blank">LinkedIn</a><a
+                    href="https://www.youtube.com/@SecureAILearningLab" target="_blank">YouTube</a><a
+                    href="https://leanpub.com/u/binitdatta2EKx_3SUrCOxN7dkY5u_pI" target="_blank">Leanpub</a><a
+                    href="contact.html">Contact</a></div>
+        </div>
+        <hr>
+        <div class="small text-secondary">© <span id="year"></span> Binit Datta. Built as a professional career
+            portfolio.
+        </div>
+    </div>
+</footer>
+
+<!-- =========================================================
+     ARCHITECTURE IMAGE ZOOM MODAL
+========================================================= -->
+<!--<div class="modal fade"-->
+<!--     id="architectureImageModal"-->
+<!--     tabindex="-1"-->
+<!--     aria-labelledby="architectureImageModalLabel"-->
+<!--     aria-hidden="true">-->
+
+<!--    <div class="modal-dialog modal-fullscreen">-->
+<!--        <div class="modal-content bg-dark">-->
+
+<!--            &lt;!&ndash; Modal Header &ndash;&gt;-->
+<!--            <div class="modal-header border-secondary">-->
+<!--                <h5 class="modal-title text-white"-->
+<!--                    id="architectureImageModalLabel">-->
+<!--                    Architecture Diagram-->
+<!--                </h5>-->
+
+<!--                <button type="button"-->
+<!--                        class="btn-close btn-close-white"-->
+<!--                        data-bs-dismiss="modal"-->
+<!--                        aria-label="Close">-->
+<!--                </button>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Zoom Toolbar &ndash;&gt;-->
+<!--            <div class="d-flex flex-wrap justify-content-center align-items-center gap-2 p-3 border-bottom border-secondary">-->
+
+<!--                <button type="button"-->
+<!--                        class="btn btn-outline-light btn-sm"-->
+<!--                        id="zoomOutBtn">-->
+<!--                    <i class="bi bi-dash-lg"></i>-->
+<!--                    Zoom Out-->
+<!--                </button>-->
+
+<!--                <button type="button"-->
+<!--                        class="btn btn-outline-light btn-sm"-->
+<!--                        id="zoomResetBtn">-->
+<!--                    <i class="bi bi-arrows-angle-contract"></i>-->
+<!--                    Reset-->
+<!--                </button>-->
+
+<!--                <button type="button"-->
+<!--                        class="btn btn-outline-light btn-sm"-->
+<!--                        id="zoomInBtn">-->
+<!--                    <i class="bi bi-plus-lg"></i>-->
+<!--                    Zoom In-->
+<!--                </button>-->
+
+<!--                <span class="text-light small ms-2"-->
+<!--                      id="zoomLevel">-->
+<!--                    100%-->
+<!--                </span>-->
+
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Image Area &ndash;&gt;-->
+<!--            <div class="modal-body p-0 overflow-auto"-->
+<!--                 id="architectureImageViewport">-->
+
+<!--                <div class="d-flex justify-content-center align-items-start p-4"-->
+<!--                     style="min-width:100%; min-height:100%;">-->
+
+<!--                    <img id="architectureModalImage"-->
+<!--                         src=""-->
+<!--                         alt="Architecture Diagram"-->
+<!--                         class="architecture-modal-image">-->
+<!--                </div>-->
+
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!-- =========================================================
+     ARCHITECTURE IMAGE VIEWER
+========================================================= -->
+
+<!-- =========================================================
+     ARCHITECTURE IMAGE VIEWER
+     Default: image fills ~94% of browser width
+     Click image: toggle larger detail view
+========================================================= -->
+<div class="modal fade"
+     id="architectureImageModal"
+     tabindex="-1"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content bg-dark">
+
+            <div class="modal-header border-secondary py-2">
+
+                <h5 class="modal-title text-white"
+                    id="architectureImageModalLabel">
+                    Architecture Diagram
+                </h5>
+
+                <button type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                </button>
+
+            </div>
+
+            <div class="modal-body p-0"
+                 id="architectureImageViewport">
+
+                <div id="architectureImageStage">
+
+                    <img id="architectureModalImage"
+                         src=""
+                         alt="Architecture Diagram"
+                         class="architecture-modal-image architecture-image-large">
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
