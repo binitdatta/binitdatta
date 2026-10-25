@@ -1,73 +1,1433 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A practical illustrated guide to domains, DNS, Cloudflare Pages, HTTPS and browser request routing using binitdatta.com."><title>Web Hosting Explained | Binit Datta</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"><link rel="stylesheet" href="styles.css"><style>
-:root{--wh-ink:#102544;--wh-blue:#1265ef;--wh-muted:#60718a}html{scroll-behavior:smooth}body{color:var(--wh-ink)}.wh-hero{background:radial-gradient(circle at 80% 20%,#d6ebff,transparent 42%),linear-gradient(125deg,#f7fbff,#e9f4ff);padding:5.5rem 0 4rem;border-bottom:1px solid #d6e4f2}.wh-kicker{font-size:.75rem;letter-spacing:.16em;font-weight:800;color:#1766b5;text-transform:uppercase}.wh-title{font-family:'Libre Baskerville',serif;font-size:clamp(2.3rem,4.5vw,4.6rem);letter-spacing:-.04em;line-height:1.17}.wh-lead{font-size:1.12rem;color:#566981;max-width:790px}.wh-pill{display:inline-flex;align-items:center;gap:.4rem;background:#fff;border:1px solid #d5e5f5;border-radius:999px;padding:.48rem .85rem;color:#244e80;font-weight:650;font-size:.84rem}.wh-section{padding:4.5rem 0}.wh-section:nth-of-type(even){background:#f5f9fd}.wh-heading{font-family:'Libre Baskerville',serif;font-size:clamp(1.8rem,3vw,2.65rem)}.wh-sub{color:#5b6d84;max-width:850px}.wh-card{background:#fff;border:1px solid #dce7f2;border-radius:20px;padding:1.5rem;height:100%;box-shadow:0 10px 28px rgba(26,73,120,.045)}.wh-card h3{font-size:1.13rem;font-weight:800}.wh-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#e8f2ff;color:#1265ef;font-size:1.4rem;margin-bottom:1rem}.wh-note{background:#eef6ff;border-left:4px solid #1265ef;border-radius:12px;padding:1.2rem 1.4rem}.wh-code{background:#101f37;color:#dceeff;padding:1.15rem 1.3rem;border-radius:12px;overflow-x:auto;font-size:.91rem}.wh-code code{color:inherit}.wh-table th{background:#eaf3ff;color:#183d6b}.wh-table td,.wh-table th{padding:.9rem;vertical-align:middle}.wh-timeline{position:relative;padding-left:2.9rem}.wh-timeline:before{content:"";position:absolute;left:18px;top:12px;bottom:12px;width:2px;background:#bfd8f6}.wh-step{position:relative;background:#fff;border:1px solid #dce7f2;border-radius:16px;padding:1.3rem 1.5rem;margin-bottom:1rem}.wh-number{position:absolute;left:-2.9rem;top:1.1rem;background:#1767ee;color:#fff;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:800}.wh-step h3{font-size:1.08rem;font-weight:800}.wh-arch{border:2px dashed #92b8e6;border-radius:24px;min-height:340px;background:linear-gradient(140deg,#f3f9ff,#e9f3ff);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}.wh-arch i{font-size:3.5rem;color:#337cd9}.wh-anchor{scroll-margin-top:110px}.wh-small{font-size:.88rem;color:#65778c}.wh-nav{position:sticky;top:85px}.wh-nav .list-group-item{border:0;border-left:3px solid transparent;background:transparent;font-size:.88rem;padding:.6rem .8rem}.wh-nav .list-group-item:hover{color:#1265ef;border-left-color:#1265ef;background:#eaf3ff}.wh-tag{background:#eaf3ff;color:#23568e;padding:.25rem .6rem;border-radius:6px;font-size:.78rem;font-weight:700}.wh-matrix{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem}.wh-matrix>div{background:white;border:1px solid #dce7f2;border-radius:14px;padding:1rem;text-align:center}.wh-matrix i{display:block;color:#1265ef;font-size:1.8rem;margin-bottom:.4rem}@media(max-width:767px){.wh-matrix{grid-template-columns:repeat(2,1fr)}.wh-section{padding:3rem 0}.wh-hero{padding:3.5rem 0}}
-</style></head><body>
-<nav class="navbar navbar-expand-xl navbar-light sticky-top bd-navbar shadow-sm"><div class="container-xxl"><a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><span class="brand-badge">BD</span><span class="brand-text"><strong>Binit Datta</strong><small>Enterprise Technology • Architecture • AI</small></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-xl-center gap-xl-1"><li class="nav-item"><a class="nav-link" href="career.html">Career</a></li><li class="nav-item"><a class="nav-link" href="business-verticals.html">Business Verticals</a></li><li class="nav-item"><a class="nav-link" href="architecture.html">Architecture</a></li><li class="nav-item"><a class="nav-link" href="technology.html">Technology</a></li><li class="nav-item"><a class="nav-link" href="books.html">Books</a></li><li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li><li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="web-hosting.html">Web Hosting</a></li><li class="nav-item ms-xl-2"><a class="btn btn-primary rounded-pill px-3" href="contact.html">Connect</a></li></ul></div></div></nav>
-<header class="wh-hero"><div class="container-xxl"><span class="wh-kicker"><i class="bi bi-globe2 me-2"></i>Architecture field guide • DNS → Edge → Pages</span><h1 class="wh-title mt-3">Web hosting, <span class="text-primary">explained from the browser outward.</span></h1><p class="wh-lead mt-4">How a domain registered at Bluehost, authoritative DNS operated by Cloudflare, and a static website deployed on Cloudflare Pages work together to deliver <strong>binitdatta.com</strong> securely around the world.</p><div class="d-flex flex-wrap gap-2 mt-4"><span class="wh-pill"><i class="bi bi-building"></i>Bluehost registrar</span><span class="wh-pill"><i class="bi bi-diagram-3"></i>Cloudflare DNS</span><span class="wh-pill"><i class="bi bi-cloud-arrow-up"></i>Cloudflare Pages</span><span class="wh-pill"><i class="bi bi-shield-lock"></i>HTTPS / TLS</span><span class="wh-pill"><i class="bi bi-arrow-left-right"></i>301 redirect</span></div><div class="mt-4"><a class="btn btn-primary rounded-pill px-4 me-2 mb-2" href="#concepts">Learn the concepts <i class="bi bi-arrow-down ms-1"></i></a><a class="btn btn-outline-primary rounded-pill px-4 mb-2" href="#browser-journey">Follow a browser request</a></div></div></header>
-<div class="container-xxl"><div class="row g-5"><aside class="col-lg-3 d-none d-lg-block"><div class="wh-nav pt-5"><div class="fw-bold mb-2 text-uppercase wh-small">On this page</div><div class="list-group"><a class="list-group-item" href="#mental-model">Mental model</a><a class="list-group-item" href="#concepts">Core concepts</a><a class="list-group-item" href="#dns-hierarchy">DNS hierarchy &amp; ICANN</a><a class="list-group-item" href="#dns-resolution">How DNS resolution works</a><a class="list-group-item" href="#dns-records">DNS record types</a><a class="list-group-item" href="#cloudflare-config">Our configuration</a><a class="list-group-item" href="#browser-journey">Browser journey</a><a class="list-group-item" href="#www-flow">WWW and redirects</a><a class="list-group-item" href="#hosting-ecosystem">Hosting ecosystem &amp; trust</a><a class="list-group-item" href="#architecture-image">Navigation architecture</a><a class="list-group-item" href="#operations">Troubleshooting and operations</a><a class="list-group-item" href="#glossary">Quick glossary</a></div></div></aside><main class="col-lg-9">
-<section class="wh-section wh-anchor" id="mental-model"><span class="wh-kicker">01 / Big picture</span><h2 class="wh-heading mt-2">Four different jobs. One working website.</h2><p class="wh-sub">Buying a domain, publishing DNS records, serving HTTPS traffic and storing website files are distinct responsibilities. They can be provided by different companies—or by the same company.</p><div class="wh-matrix mt-4"><div><i class="bi bi-person-vcard"></i><strong>Registration</strong><div class="wh-small">Who controls the domain?</div></div><div><i class="bi bi-signpost-split"></i><strong>DNS</strong><div class="wh-small">Where should it resolve?</div></div><div><i class="bi bi-shield-check"></i><strong>Edge</strong><div class="wh-small">Who accepts HTTPS?</div></div><div><i class="bi bi-filetype-html"></i><strong>Hosting</strong><div class="wh-small">Where are site assets served?</div></div></div><div class="wh-note mt-4"><strong>In this deployment:</strong> Bluehost is the registrar; Cloudflare's assigned nameservers are authoritative for the DNS zone; Cloudflare's edge handles proxied traffic and TLS; Cloudflare Pages serves the deployed static website.</div></section>
-<section class="wh-section wh-anchor" id="concepts"><span class="wh-kicker">02 / Foundations</span><h2 class="wh-heading mt-2">Core concepts you encountered</h2><p class="wh-sub">Expand any card to see how the concept applies to your own website.</p><div class="accordion mt-4" id="conceptAccordion">
-<div class="accordion-item border rounded-3 mb-2 overflow-hidden"><h3 class="accordion-header"><button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#concept0" aria-expanded="true"><span class="me-2 wh-tag">01</span>Domain owner / registrant</button></h3><div id="concept0" class="accordion-collapse collapse show" data-bs-parent="#conceptAccordion"><div class="accordion-body"><p>The person or organization that holds the right to use a registered domain for its registration term, subject to registrar and registry policies. A domain is renewed, not purchased forever.</p><div class="wh-note"><strong>In your deployment:</strong> You control binitdatta.com through its registrar account; Bluehost is not automatically the web host.</div></div></div></div>
-<div class="accordion-item border rounded-3 mb-2 overflow-hidden"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept1" aria-expanded="false"><span class="me-2 wh-tag">02</span>Domain registrar and registry</button></h3><div id="concept1" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion"><div class="accordion-body"><p>A registrar is the accredited retail provider through which you register and renew a domain. The registry operates the top-level domain database (for example, .com). ICANN coordinates key naming-system policies and contracts.</p><div class="wh-note"><strong>In your deployment:</strong> You manage registration and nameserver delegation at Bluehost; the .com registry publishes the delegation.</div></div></div></div>
-<div class="accordion-item border rounded-3 mb-2 overflow-hidden"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept2" aria-expanded="false"><span class="me-2 wh-tag">03</span>Authoritative DNS server</button></h3><div id="concept2" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion"><div class="accordion-body"><p>A nameserver that provides authoritative answers for records in a DNS zone. It is the source of truth for the zone, unlike a caching recursive resolver.</p><div class="wh-note"><strong>In your deployment:</strong> Cloudflare nameservers abby.ns.cloudflare.com and kanye.ns.cloudflare.com are delegated for your domain.</div></div></div></div>
-<div class="accordion-item border rounded-3 mb-2 overflow-hidden"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept3" aria-expanded="false"><span class="me-2 wh-tag">04</span>DNS server versus DNS resolver</button></h3><div id="concept3" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion"><div class="accordion-body"><p>“DNS server” is a broad term. A recursive resolver looks up answers for a client and caches them; authoritative nameservers publish the zone’s records. Root and TLD nameservers guide the resolver through the hierarchy.</p><div class="wh-note"><strong>In your deployment:</strong> Your browser/OS generally asks a configured recursive resolver, which follows or uses cached delegation to Cloudflare.</div></div></div></div>
-<div class="accordion-item border rounded-3 mb-2 overflow-hidden"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept4" aria-expanded="false"><span class="me-2 wh-tag">05</span>Nameserver (NS) delegation</button></h3><div id="concept4" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion"><div class="accordion-body"><p>The parent DNS zone lists the nameservers responsible for the child domain. Changing nameservers at the registrar changes delegation, not the HTML files.</p><div class="wh-note"><strong>In your deployment:</strong> You changed Bluehost nameservers from Azure DNS to Cloudflare nameservers.</div></div></div></div>
-<div class="accordion-item border rounded-3 mb-2 overflow-hidden"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept5" aria-expanded="false"><span class="me-2 wh-tag">06</span>Domain, hostname, apex and subdomain</button></h3><div id="concept5" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion"><div class="accordion-body"><p>binitdatta.com is the registered domain and zone apex (root). www.binitdatta.com is a hostname under it; “www” is a conventional subdomain label, not a required Internet service.</p><div class="wh-note"><strong>In your deployment:</strong> Both apex and www are separately configured as Cloudflare Pages custom domains.</div></div></div></div>
-<div class="accordion-item border rounded-3 mb-2 overflow-hidden"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept6" aria-expanded="false"><span class="me-2 wh-tag">07</span>DNS zone and TTL</button></h3><div id="concept6" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion"><div class="accordion-body"><p>A DNS zone is the administratively managed collection of records. TTL (time to live) tells caching resolvers how long an answer may be reused. Changes can appear at different times due to caches.</p><div class="wh-note"><strong>In your deployment:</strong> Your records have TTL Auto; changes can take time to be observed across recursive resolvers.</div></div></div></div>
-<div class="accordion-item border rounded-3 mb-2 overflow-hidden"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept7" aria-expanded="false"><span class="me-2 wh-tag">08</span>CNAME record</button></h3><div id="concept7" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion"><div class="accordion-body"><p>A canonical-name record aliases one DNS name to another DNS name. It does not directly contain a server IP address, nor does it perform a browser HTTP redirect.</p><div class="wh-note"><strong>In your deployment:</strong> The www hostname has a CNAME target of binitdatta-career.pages.dev. Cloudflare also supports an apex CNAME through flattening.</div></div></div></div>
-<div class="accordion-item border rounded-3 mb-2 overflow-hidden"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept8" aria-expanded="false"><span class="me-2 wh-tag">09</span>Cloudflare proxy / CDN / edge</button></h3><div id="concept8" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion"><div class="accordion-body"><p>With proxied (orange-cloud) records, visitors generally connect to Cloudflare edge IPs, where Cloudflare can terminate TLS, apply security and caching, and route requests to Pages.</p><div class="wh-note"><strong>In your deployment:</strong> A DNS lookup does not need to expose an individual Pages origin server.</div></div></div></div>
-<div class="accordion-item border rounded-3 mb-2 overflow-hidden"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept9" aria-expanded="false"><span class="me-2 wh-tag">10</span>Static web hosting and deployment</button></h3><div id="concept9" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion"><div class="accordion-body"><p>Static hosting serves prebuilt HTML, CSS, JavaScript, images and other assets without requiring a traditional application server to render each page. JavaScript can still run in the visitor’s browser.</p><div class="wh-note"><strong>In your deployment:</strong> Your index.html and other HTML pages are deployed to the binitdatta-career Cloudflare Pages project.</div></div></div></div>
-<div class="accordion-item border rounded-3 mb-2 overflow-hidden"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept10" aria-expanded="false"><span class="me-2 wh-tag">11</span>HTTPS, TLS and certificate</button></h3><div id="concept10" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion"><div class="accordion-body"><p>HTTPS is HTTP protected by TLS. During a TLS handshake, the browser validates a certificate for the requested hostname and negotiates encryption. A certificate does not itself register a domain.</p><div class="wh-note"><strong>In your deployment:</strong> Cloudflare Pages shows SSL enabled for binitdatta.com and www.binitdatta.com.</div></div></div></div>
-<div class="accordion-item border rounded-3 mb-2 overflow-hidden"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept11" aria-expanded="false"><span class="me-2 wh-tag">12</span>Custom domain and virtual host routing</button></h3><div id="concept11" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion"><div class="accordion-body"><p>A hosting platform associates a public hostname with a specific deployment. TLS SNI and HTTP Host/:authority help the edge identify which site a visitor requested.</p><div class="wh-note"><strong>In your deployment:</strong> Cloudflare Pages maps both custom hostnames to the binitdatta-career deployment.</div></div></div></div>
-<div class="accordion-item border rounded-3 mb-2 overflow-hidden"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept12" aria-expanded="false"><span class="me-2 wh-tag">13</span>HTTP redirect and canonical URL</button></h3><div id="concept12" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion"><div class="accordion-body"><p>A 301 response instructs the browser to request a different URL. This happens after DNS and HTTP(S) connection handling; it is distinct from CNAME resolution. A canonical URL is the preferred public address.</p><div class="wh-note"><strong>In your deployment:</strong> Your Cloudflare redirect rule sends HTTPS www requests to the apex, preserving the path and query string.</div></div></div></div>
-<div class="accordion-item border rounded-3 mb-2 overflow-hidden"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept13" aria-expanded="false"><span class="me-2 wh-tag">14</span>Browser cache and DNS cache</button></h3><div id="concept13" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion"><div class="accordion-body"><p>The browser, operating system and recursive resolver may cache DNS answers; browsers and CDN edges may cache HTTP assets or redirects. These caches have different lifetimes and behaviors.</p><div class="wh-note"><strong>In your deployment:</strong> A previously cached 301 or DNS response can make tests differ across devices or browsers.</div></div></div></div>
-<div class="accordion-item border rounded-3 mb-2 overflow-hidden"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#concept14" aria-expanded="false"><span class="me-2 wh-tag">15</span>URL path, query and fragment</button></h3><div id="concept14" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion"><div class="accordion-body"><p>In https://binitdatta.com/architecture?topic=erp#erp-architecture, the scheme is https, host is binitdatta.com, path is /architecture, query is topic=erp, and fragment is erp-architecture. The fragment is handled by the browser, not sent in the HTTP request.</p><div class="wh-note"><strong>In your deployment:</strong> Your architecture section uses #erp-architecture; the browser can preserve it when following a redirect.</div></div></div></div>
-</div></section>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description"
+          content="A practical illustrated guide to domains, DNS, Cloudflare Pages, HTTPS and browser request routing using binitdatta.com.">
+    <title>Web Hosting Explained | Binit Datta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:wght@700&display=swap"
+          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --wh-ink: #102544;
+            --wh-blue: #1265ef;
+            --wh-muted: #60718a
+        }
 
-<section class="wh-section wh-anchor" id="dns-hierarchy"><span class="wh-kicker">Deep dive / DNS governance and hierarchy</span><h2 class="wh-heading mt-2">Who governs the DNS namespace—and who answers queries?</h2><p class="wh-sub">DNS is a distributed, hierarchical naming system. No single DNS server stores every domain. The hierarchy delegates authority from the root to top-level domains and then to the authoritative nameservers for individual domains.</p>
-<div class="row g-3 mt-3"><div class="col-md-6"><div class="wh-card"><div class="wh-icon"><i class="bi bi-globe-americas"></i></div><h3>ICANN and IANA</h3><p><strong>ICANN</strong> coordinates policies and key identifiers for the global domain-name system. Through its IANA functions, it coordinates the DNS root zone, including delegations to TLD operators. ICANN does <em>not</em> resolve every browser query or directly host your website.</p><p class="mb-0"><strong>Root zone management:</strong> IANA coordinates root-zone changes; the root-zone maintainer and root server operators play separate operational roles.</p></div></div><div class="col-md-6"><div class="wh-card"><div class="wh-icon"><i class="bi bi-diagram-3"></i></div><h3>Hierarchy: root → .com → binitdatta.com</h3><p><strong>Root (.)</strong> delegates to TLD nameservers. <strong>.com TLD</strong> nameservers, operated by the .com registry, delegate <code>binitdatta.com</code> to its assigned authoritative nameservers. <strong>Cloudflare authoritative DNS</strong> supplies the zone's DNS responses.</p><p class="mb-0">Your registrar account at Bluehost controls which nameservers are published for your domain at the registry.</p></div></div></div>
-<div class="wh-note mt-4"><strong>Why “13 root servers”?</strong> There are <strong>13 named root server identities</strong>, labeled <code>A.root-servers.net</code> through <code>M.root-servers.net</code>, not merely 13 physical machines or 13 geographic clusters. The historical count reflects the original DNS transport/packet-size constraints. Today, independent operators deploy these identities across <strong>many hundreds of anycast instances worldwide</strong> for resilience, performance, and global reach. Root servers direct resolvers to TLD nameservers; they generally do not return the final IP for a website.</div>
-<figure class="mt-4"><div class="border rounded-4 p-2 p-lg-3 bg-white shadow-sm"><a href="assets/images/architecture/dns-hierarchy.png" target="_blank" rel="noopener" aria-label="Open DNS server hierarchy diagram full size"><img src="assets/images/architecture/dns-hierarchy.png" class="img-fluid w-100 rounded-3" alt="Illustration of browser, recursive DNS resolver, root DNS servers, .com TLD nameservers, Cloudflare authoritative DNS, and Cloudflare Pages" loading="lazy"></a></div><figcaption class="wh-small mt-2">DNS server hierarchy — click to inspect the full-size diagram. Diagram is conceptual: proxied Cloudflare DNS answers are Cloudflare edge IP addresses; CNAMEs to Pages are configuration targets and are not necessarily exposed directly in public DNS responses.</figcaption></figure>
-</section>
-<section class="wh-section wh-anchor" id="dns-resolution"><span class="wh-kicker">Deep dive / Recursive resolution</span><h2 class="wh-heading mt-2">How the DNS hierarchy resolves your domain</h2><p class="wh-sub">A recursive resolver does the legwork on behalf of the browser. The following is a typical <em>cold-cache</em> lookup; caching can skip several of these steps.</p>
-<div class="accordion mt-4" id="dnsHierarchyAccordion">
-<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#dnsStep1" aria-expanded="true">1. Browser / operating system asks a recursive resolver</button></h3><div id="dnsStep1" class="accordion-collapse collapse show" data-bs-parent="#dnsHierarchyAccordion"><div class="accordion-body">For <code>www.binitdatta.com</code>, the browser may first consult its own cache and the OS resolver cache. A recursive DNS service (ISP, enterprise, or public resolver such as <code>1.1.1.1</code>) checks its cached data before asking other servers.</div></div></div>
-<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dnsStep2">2. Root nameserver returns a referral to .com</button></h3><div id="dnsStep2" class="accordion-collapse collapse" data-bs-parent="#dnsHierarchyAccordion"><div class="accordion-body">When necessary, the resolver asks a root server about the name. The root responds with a referral containing the authoritative nameservers for the <code>.com</code> TLD, rather than an address for the site.</div></div></div>
-<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dnsStep3">3. .com TLD returns a referral to Cloudflare</button></h3><div id="dnsStep3" class="accordion-collapse collapse" data-bs-parent="#dnsHierarchyAccordion"><div class="accordion-body">The resolver queries a <code>.com</code> nameserver. The registry's delegation identifies the authoritative nameservers for <code>binitdatta.com</code>: <code>abby.ns.cloudflare.com</code> and <code>kanye.ns.cloudflare.com</code>.</div></div></div>
-<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dnsStep4">4. Cloudflare authoritative DNS returns the usable answer</button></h3><div id="dnsStep4" class="accordion-collapse collapse" data-bs-parent="#dnsHierarchyAccordion"><div class="accordion-body">Cloudflare consults the zone configuration. Both the apex and <code>www</code> are configured as proxied CNAMEs targeting <code>binitdatta-career.pages.dev</code>. With proxying enabled, public address lookups normally return Cloudflare edge IP addresses rather than the internal CNAME targets. Cloudflare's apex CNAME flattening also permits the root hostname to be configured as a CNAME-like record.</div></div></div>
-<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dnsStep5">5. Resolver caches; browser connects to Cloudflare</button></h3><div id="dnsStep5" class="accordion-collapse collapse" data-bs-parent="#dnsHierarchyAccordion"><div class="accordion-body">The recursive resolver returns an IP address to the client and caches the response according to applicable TTLs and resolver behavior. The browser connects to Cloudflare's edge over HTTPS. DNS is finished at this point: Cloudflare's HTTP routing and Pages mapping determine which website is served.</div></div></div>
-</div><div class="wh-note mt-4"><strong>Important separation:</strong> DNS does not perform the <code>www</code> → apex redirect. After HTTPS is established for <code>www.binitdatta.com</code>, your Cloudflare Redirect Rule returns HTTP <strong>301</strong>; the browser then requests <code>https://binitdatta.com/</code>. Root, TLD, and authoritative DNS servers are not HTTP redirect servers.</div>
-</section>
-<section class="wh-section wh-anchor" id="dns-records"><span class="wh-kicker">03 / DNS vocabulary</span><h2 class="wh-heading mt-2">Know what each DNS record actually does</h2><div class="table-responsive mt-4"><table class="table table-bordered wh-table"><thead><tr><th>Record</th><th>Purpose</th><th>Example / caution</th></tr></thead><tbody><tr><td><strong>A</strong></td><td>Maps hostname to IPv4 address</td><td><code>203.0.113.10</code> (documentation example)</td></tr><tr><td><strong>AAAA</strong></td><td>Maps hostname to IPv6 address</td><td><code>2001:db8::10</code> (documentation example)</td></tr><tr><td><strong>CNAME</strong></td><td>Aliases a hostname to another DNS name</td><td><code>www → binitdatta-career.pages.dev</code></td></tr><tr><td><strong>NS</strong></td><td>Delegates DNS authority to nameservers</td><td><code>abby.ns.cloudflare.com</code>, <code>kanye.ns.cloudflare.com</code></td></tr><tr><td><strong>SOA</strong></td><td>Zone authority and timing metadata</td><td>Maintained by the DNS provider</td></tr><tr><td><strong>MX</strong></td><td>Mail server routing</td><td>Only relevant if you configure domain email</td></tr><tr><td><strong>TXT</strong></td><td>Text metadata, verification, SPF, DMARC and more</td><td>Does not serve your HTML</td></tr><tr><td><strong>CAA</strong></td><td>Restricts certificate authorities permitted to issue certificates</td><td>May affect TLS certificate issuance</td></tr></tbody></table></div><div class="wh-note"><strong>Why an apex CNAME works here:</strong> Standard DNS CNAME records cannot coexist with other record types at the same owner name. Cloudflare implements <em>CNAME flattening</em> at the zone apex, presenting address answers to resolvers while letting you configure the apex to target a Pages hostname.</div></section>
-<section class="wh-section wh-anchor" id="cloudflare-config"><span class="wh-kicker">04 / What we configured</span><h2 class="wh-heading mt-2">Your actual Cloudflare setup</h2><div class="row g-3 mt-2"><div class="col-md-6"><div class="wh-card"><div class="wh-icon"><i class="bi bi-person-lock"></i></div><h3>1. Registrar delegation</h3><p>At Bluehost, you changed the domain’s nameservers to Cloudflare’s assigned pair.</p><div class="wh-code"><code>abby.ns.cloudflare.com<br>kanye.ns.cloudflare.com</code></div></div></div><div class="col-md-6"><div class="wh-card"><div class="wh-icon"><i class="bi bi-hdd-network"></i></div><h3>2. Cloudflare DNS records</h3><p>Cloudflare manages the DNS zone. Both hostnames are configured as proxied CNAMEs targeting the Pages project.</p><div class="wh-code"><code>@ → binitdatta-career.pages.dev<br>www → binitdatta-career.pages.dev</code></div></div></div><div class="col-md-6"><div class="wh-card"><div class="wh-icon"><i class="bi bi-cloud-check"></i></div><h3>3. Pages custom domains</h3><p>Inside the <code>binitdatta-career</code> Pages project, you added <code>binitdatta.com</code> and <code>www.binitdatta.com</code>. Both subsequently showed <strong>Active</strong> with SSL enabled.</p></div></div><div class="col-md-6"><div class="wh-card"><div class="wh-icon"><i class="bi bi-arrow-repeat"></i></div><h3>4. Canonical-host redirect</h3><p>You deployed a Cloudflare Single Redirect: requests for the HTTPS <code>www</code> hostname receive a <strong>301</strong> pointing to the root hostname.</p><div class="wh-code"><code>https://www.binitdatta.com/*<br>↓ 301<br>https://binitdatta.com/${1}</code></div></div></div></div><div class="alert alert-warning mt-4 mb-0"><i class="bi bi-info-circle me-2"></i><strong>Important distinction:</strong> The configuration above is based on the Cloudflare screens from this setup. A live request can additionally be affected by cache, WAF rules, and future changes. The redirect rule shown matches <strong>HTTPS www</strong>; redirecting plain HTTP www consistently also depends on your HTTPS/redirect settings.</div></section>
-<section class="wh-section wh-anchor" id="browser-journey"><span class="wh-kicker">05 / Request lifecycle</span><h2 class="wh-heading mt-2">What happens when you type https://binitdatta.com?</h2><p class="wh-sub">The precise network messages depend on caching, browser features and connection reuse, but this is the typical logical sequence for a fresh visit.</p><div class="wh-timeline mt-4">
-<div class="wh-step"><span class="wh-number">1</span><h3>Parse the URL</h3><p class="mb-0">The browser identifies the HTTPS scheme, hostname <code>binitdatta.com</code>, path <code>/</code> and default HTTPS port <code>443</code>. It checks whether an existing connection or cached response can be reused.</p></div>
-<div class="wh-step"><span class="wh-number">2</span><h3>Find a DNS answer</h3><p class="mb-0">The browser/OS consults DNS caches and typically asks a recursive DNS resolver. On a cache miss, the resolver can follow root → <code>.com</code> TLD → Cloudflare authoritative nameserver delegation. Cloudflare provides the appropriate DNS answer; because the record is proxied, the browser normally receives Cloudflare edge addresses.</p></div>
-<div class="wh-step"><span class="wh-number">3</span><h3>Connect to a Cloudflare edge</h3><p class="mb-0">The browser establishes a network connection to a Cloudflare IP address. The route often uses anycast to reach a nearby available Cloudflare location. The IP alone does not identify which customer site should be served.</p></div>
-<div class="wh-step"><span class="wh-number">4</span><h3>Negotiate TLS and validate identity</h3><p class="mb-0">The browser and Cloudflare negotiate TLS; the browser checks that the certificate is trusted and valid for <code>binitdatta.com</code>. SNI commonly indicates the requested hostname during the TLS handshake.</p></div>
-<div class="wh-step"><span class="wh-number">5</span><h3>Send the HTTP request</h3><p class="mb-2">Inside the encrypted connection, the browser sends an HTTP request containing the path and host identity (Host header in HTTP/1.1 or <code>:authority</code> in HTTP/2/3).</p><div class="wh-code"><code>GET / HTTP/1.1<br>Host: binitdatta.com</code></div></div>
-<div class="wh-step"><span class="wh-number">6</span><h3>Apply edge routing and security</h3><p class="mb-0">Cloudflare can evaluate relevant security, redirect, and caching rules. Its Pages custom-domain mapping identifies the <code>binitdatta-career</code> project for the requested hostname.</p></div>
-<div class="wh-step"><span class="wh-number">7</span><h3>Deliver the static site</h3><p class="mb-0">Cloudflare Pages returns the deployed entry document (typically <code>index.html</code> for <code>/</code>), either from edge cache or the Pages delivery infrastructure. There is no requirement to execute a Spring Boot or Flask server for this static page.</p></div>
-<div class="wh-step"><span class="wh-number">8</span><h3>Load CSS, JavaScript, images and fonts</h3><p class="mb-0">The browser parses HTML, requests referenced assets such as <code>styles.css</code>, <code>script.js</code>, and <code>assets/images/...</code>, executes client-side JavaScript, and paints the page. Third-party Bootstrap and Google Fonts URLs are fetched from their respective hosts.</p></div>
-<div class="wh-step"><span class="wh-number">9</span><h3>Navigate and reuse caches</h3><p class="mb-0">Further page visits may reuse DNS results, TLS connections, and cached assets. Links to <code>architecture.html</code> request another static document; an anchor such as <code>#erp-architecture</code> navigates within the loaded document in the browser.</p></div>
-</div></section>
-<section class="wh-section wh-anchor" id="www-flow"><span class="wh-kicker">06 / Compare both URLs</span><h2 class="wh-heading mt-2">What changes when the visitor enters www?</h2><div class="row g-3 mt-3"><div class="col-md-6"><div class="wh-card"><span class="wh-tag">Direct visit</span><h3 class="mt-3">https://binitdatta.com</h3><p>The browser resolves the apex hostname, connects securely to Cloudflare, and requests the site directly through the Pages custom-domain mapping.</p><div class="wh-code"><code>Browser → Cloudflare edge<br>→ Pages → index.html</code></div></div></div><div class="col-md-6"><div class="wh-card"><span class="wh-tag">Canonical redirect</span><h3 class="mt-3">https://www.binitdatta.com</h3><p>The browser resolves <code>www</code>, establishes HTTPS to Cloudflare, and receives the configured <strong>301</strong>. It then makes a <em>new</em> request to the apex hostname.</p><div class="wh-code"><code>Browser → Cloudflare edge<br>← 301 Location: https://binitdatta.com/<br>Browser → binitdatta.com → Pages</code></div></div></div></div><div class="table-responsive mt-4"><table class="table table-bordered wh-table"><thead><tr><th>Incoming request</th><th>Expected redirect target</th></tr></thead><tbody><tr><td><code>https://www.binitdatta.com/</code></td><td><code>https://binitdatta.com/</code></td></tr><tr><td><code>https://www.binitdatta.com/architecture</code></td><td><code>https://binitdatta.com/architecture</code></td></tr><tr><td><code>https://www.binitdatta.com/articles?topic=ai</code></td><td><code>https://binitdatta.com/articles?topic=ai</code> when Preserve query string is enabled</td></tr><tr><td><code>https://www.binitdatta.com/architecture#erp-architecture</code></td><td><code>https://binitdatta.com/architecture#erp-architecture</code> in normal browser navigation; the fragment never travels in the HTTP request</td></tr></tbody></table></div><div class="wh-note"><strong>CNAME ≠ redirect:</strong> The CNAME controls DNS naming; it does not change the URL in the address bar. The <strong>HTTP 301</strong> response is what instructs the browser to navigate to the canonical hostname.</div></section>
-<section class="wh-section wh-anchor" id="hosting-ecosystem">
-<span class="wh-kicker">Architecture illustration / Organizations, infrastructure &amp; trust</span>
-<h2 class="wh-heading mt-2">The complete web hosting ecosystem</h2>
-<p class="wh-sub">This illustration brings together the organizations that administer domain names, the infrastructure that resolves them, the certificate trust system, and the Cloudflare services that deliver your website. The numbered boxes describe <strong>roles</strong>, not a single serial packet route: domain registration and certificate issuance happen outside the normal per-visit DNS/HTTP sequence.</p>
-<figure class="mt-4"><div class="border rounded-4 p-2 p-lg-3 bg-white shadow-sm"><a href="assets/images/architecture/web-hosting-ecosystem.png" target="_blank" rel="noopener" title="Open full-size web hosting ecosystem diagram"><img src="assets/images/architecture/web-hosting-ecosystem.png" class="img-fluid w-100 rounded-3" alt="Complete web hosting ecosystem with registrar, ICANN, recursive resolver, DNS root and TLD servers, Cloudflare authoritative DNS, certificate authorities, edge, Pages, custom hostnames, and browser" loading="lazy"></a></div><figcaption class="wh-small mt-2">Click the diagram to view it at full resolution. The image is a conceptual teaching aid; the descriptions below clarify important protocol boundaries.</figcaption></figure>
-<h3 class="h4 fw-bold mt-5 mb-3">Roles and responsibilities of all 11 components</h3>
-<div class="row g-3"><div class="col-md-6"><div class="wh-card h-100"><span class="wh-tag">Component 01</span><h3 class="h5 mt-3">Domain registrar — Bluehost</h3><p class="mb-0">Bluehost is the retail registrar through which the domain is registered and renewed. The registrant controls its registration and changes the delegated nameservers in the registrar account. Registration does not store or serve the website.</p></div></div><div class="col-md-6"><div class="wh-card h-100"><span class="wh-tag">Component 02</span><h3 class="h5 mt-3">ICANN, IANA, and the registry</h3><p class="mb-0">ICANN coordinates policies and contracts for the domain-name system; IANA functions coordinate the DNS root zone. Verisign operates the .com registry and its TLD nameservers. ICANN does not handle each visitor’s DNS lookup or host your pages.</p></div></div><div class="col-md-6"><div class="wh-card h-100"><span class="wh-tag">Component 03</span><h3 class="h5 mt-3">Recursive DNS resolver</h3><p class="mb-0">A recursive resolver, commonly provided by an ISP or a public DNS service, answers the client’s hostname lookup. It checks its cache first and, when necessary, follows the DNS hierarchy. The browser or operating system may also cache answers.</p></div></div><div class="col-md-6"><div class="wh-card h-100"><span class="wh-tag">Component 04</span><h3 class="h5 mt-3">Root DNS server system</h3><p class="mb-0">The root zone has 13 named root-server identities (A through M), run by 12 independent operators and replicated across many anycast sites worldwide. Root servers refer resolvers to the appropriate TLD nameservers; they do not normally return the IP address of your website.</p></div></div><div class="col-md-6"><div class="wh-card h-100"><span class="wh-tag">Component 05</span><h3 class="h5 mt-3">.com TLD nameservers</h3><p class="mb-0">The .com top-level-domain nameservers, operated by the .com registry, provide delegation information for binitdatta.com, pointing resolvers toward the domain’s authoritative nameservers. They do not contain the website’s HTML.</p></div></div><div class="col-md-6"><div class="wh-card h-100"><span class="wh-tag">Component 06</span><h3 class="h5 mt-3">Authoritative DNS — Cloudflare</h3><p class="mb-0">Cloudflare is authoritative for the binitdatta.com DNS zone through the delegated nameservers. It manages records for the apex and www hostnames, pointing the Pages custom domains to binitdatta-career.pages.dev. With proxying enabled, public DNS typically returns Cloudflare edge addresses.</p></div></div><div class="col-md-6"><div class="wh-card h-100"><span class="wh-tag">Component 07</span><h3 class="h5 mt-3">Certificate authorities and trust stores</h3><p class="mb-0">A certificate authority validates the appropriate domain-control evidence before issuing a TLS certificate. Cloudflare provisions certificates for active custom domains. During a TLS handshake, the visitor’s browser validates the certificate chain, hostname, validity period, and trust against its trust store; certificate revocation checks depend on client policy.</p></div></div><div class="col-md-6"><div class="wh-card h-100"><span class="wh-tag">Component 08</span><h3 class="h5 mt-3">Cloudflare edge and network security</h3><p class="mb-0">The browser connects to a Cloudflare edge IP. Cloudflare terminates the HTTPS connection, applies relevant security and redirect rules, and may serve cached static assets. The configured www-to-apex 301 is an HTTP response from this layer; it is not a DNS operation.</p></div></div><div class="col-md-6"><div class="wh-card h-100"><span class="wh-tag">Component 09</span><h3 class="h5 mt-3">Cloudflare Pages deployment</h3><p class="mb-0">The deployed static site is associated with binitdatta-career.pages.dev and both custom hostnames. Pages distributes and serves HTML, CSS, JavaScript, and image assets through Cloudflare’s infrastructure. Pages is a hosting/deployment platform, not necessarily a single origin server.</p></div></div><div class="col-md-6"><div class="wh-card h-100"><span class="wh-tag">Component 10</span><h3 class="h5 mt-3">Custom hostnames, certificates, and redirects</h3><p class="mb-0">Both binitdatta.com and www.binitdatta.com are configured as Pages custom domains with SSL enabled. A permanent 301 rule redirects HTTPS requests for www to the apex hostname, preserving paths and, when enabled in the rule, query strings.</p></div></div><div class="col-md-6"><div class="wh-card h-100"><span class="wh-tag">Component 11</span><h3 class="h5 mt-3">End-user browser</h3><p class="mb-0">The browser parses the URL, obtains a DNS answer, establishes an encrypted HTTPS connection, sends HTTP requests, processes any 301 redirect, downloads assets, and renders the website. Subsequent navigation can reuse cached DNS, connections, and static resources.</p></div></div></div>
-<div class="wh-note mt-4"><strong>Additional essential participants:</strong> The <strong>.com registry (Verisign)</strong> publishes TLD delegation; the <strong>registrant</strong> controls the domain; the <strong>operating system and its trust store</strong> assist DNS and TLS validation; the <strong>network/ISP and routing system</strong> carry packets to Cloudflare anycast addresses; and the <strong>browser's HTTP cache</strong> can avoid repeat downloads. These roles complement the 11 labeled blocks.</div>
-<h3 class="h4 fw-bold mt-5 mb-3">Three different workflows — do not confuse them</h3>
-<div class="row g-3"><div class="col-lg-4"><div class="wh-card h-100"><span class="wh-tag">Administrative setup</span><h3 class="h5 mt-3">Registration and delegation</h3><p class="mb-0">Registrant → Bluehost registrar → .com registry delegation → Cloudflare authoritative nameservers. This is configured ahead of time, not repeated for every visitor.</p></div></div><div class="col-lg-4"><div class="wh-card h-100"><span class="wh-tag">Name resolution</span><h3 class="h5 mt-3">DNS lookup</h3><p class="mb-0">Client → recursive resolver → root referral → .com referral → Cloudflare authoritative answer. Cached information may skip some or all upstream queries.</p></div></div><div class="col-lg-4"><div class="wh-card h-100"><span class="wh-tag">Secure content delivery</span><h3 class="h5 mt-3">TLS, redirect, Pages</h3><p class="mb-0">Browser → Cloudflare edge TLS handshake → browser validates certificate → HTTP 301 for www → new apex request → Pages content → browser rendering.</p></div></div></div>
-<div class="wh-note mt-4"><strong>Certificate distinction:</strong> The CA issues a certificate after domain-control validation; the browser validates the certificate presented by the edge during TLS. Certificate issuance is not ordinarily performed during every page visit. <strong>Root-server distinction:</strong> “13” refers to root-server identities, not just 13 machines or 13 physical clusters.</div>
-</section>
-<section class="wh-section wh-anchor" id="architecture-image"><span class="wh-kicker">Architecture illustration / End-to-end request</span><h2 class="wh-heading mt-2">Browser-to-Cloudflare navigation architecture</h2><p class="wh-sub">The diagram connects the DNS hierarchy to the HTTPS request, Cloudflare edge processing, your canonical-host redirect, and Cloudflare Pages content delivery. Click the image to inspect it at full resolution.</p><figure class="mt-4"><div class="border rounded-4 p-2 p-lg-3 bg-white shadow-sm"><a href="assets/images/architecture/web-hosting-navigation-architecture.png" target="_blank" rel="noopener"><img src="assets/images/architecture/web-hosting-navigation-architecture.png" class="img-fluid w-100 rounded-3" alt="Eight-stage navigation diagram: browser, recursive DNS, Cloudflare authoritative DNS, edge connection, TLS, redirect rules, Pages hosting, and rendered website" loading="lazy"></a></div><figcaption class="wh-small mt-2">End-to-end conceptual architecture for binitdatta.com. Both hostnames use proxied CNAME configuration; public DNS normally exposes Cloudflare edge addresses rather than the underlying Pages CNAME.</figcaption></figure>
-<div class="row g-3 mt-3"><div class="col-md-6"><div class="wh-card"><span class="wh-tag">01 → 02</span><h3 class="mt-3">Browser entry and recursive lookup</h3><p class="mb-0">A visitor enters the URL. The browser or operating system requests DNS resolution, using caches where possible. On a cache miss, a recursive resolver follows root, TLD, and authoritative delegations.</p></div></div><div class="col-md-6"><div class="wh-card"><span class="wh-tag">03 → 04</span><h3 class="mt-3">Authoritative answer and edge connection</h3><p class="mb-0">Cloudflare's authoritative nameservers answer for the zone. Because the DNS records are proxied, the browser connects to a Cloudflare anycast edge IP. Cloudflare's network routes the connection to an available edge location.</p></div></div><div class="col-md-6"><div class="wh-card"><span class="wh-tag">05 → 06</span><h3 class="mt-3">TLS and canonical redirect</h3><p class="mb-0">The browser validates Cloudflare's certificate and establishes HTTPS. For <code>www.binitdatta.com</code>, your active Redirect Rule returns HTTP <strong>301</strong> to the corresponding apex URL, preserving the path and configured query string. For the apex hostname, this redirect step is skipped.</p></div></div><div class="col-md-6"><div class="wh-card"><span class="wh-tag">07 → 08</span><h3 class="mt-3">Pages delivery and browser rendering</h3><p class="mb-0">Cloudflare maps <code>binitdatta.com</code> to the <code>binitdatta-career</code> Pages project, returns HTML and other static assets, and the browser constructs and renders the document. CSS, JavaScript, fonts, and images may trigger additional requests.</p></div></div></div>
-<div class="wh-note mt-4"><strong>Read the diagram as two possible paths:</strong> <code>https://binitdatta.com</code> goes straight from edge handling to Pages delivery; <code>https://www.binitdatta.com</code> first receives a 301 and initiates a new request to the apex. The Pages hostname <code>binitdatta-career.pages.dev</code> identifies the deployment target—it is not a mandatory browser-visible redirect or a separate DNS hop after TLS.</div></section>
-<section class="wh-section wh-anchor" id="operations"><span class="wh-kicker">08 / Operate and troubleshoot</span><h2 class="wh-heading mt-2">How to diagnose problems without changing the wrong layer</h2><div class="accordion mt-4" id="troubleshooting"><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#issue1">Domain does not resolve</button></h3><div id="issue1" class="accordion-collapse collapse show" data-bs-parent="#troubleshooting"><div class="accordion-body">Verify registrar nameserver delegation, Cloudflare zone status, CNAME records, and DNS propagation. DNS failures occur before the browser can send a normal HTTPS request.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#issue2">Cloudflare Pages says “Verifying” or “undefined”</button></h3><div id="issue2" class="accordion-collapse collapse" data-bs-parent="#troubleshooting"><div class="accordion-body">Compare the required custom-domain CNAME target against the DNS zone, verify proxy settings, and allow certificate/domain provisioning time. A dashboard status may lag behind successful traffic; do not repeatedly delete working records.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#issue3">403 Forbidden or unexpected block</button></h3><div id="issue3" class="accordion-collapse collapse" data-bs-parent="#troubleshooting"><div class="accordion-body">A 403 is an HTTP response, so DNS and at least some network connectivity succeeded. Check Cloudflare security events, access controls, custom-domain state, and whether the Pages <code>pages.dev</code> URL works. Do not assume a 403 proves DNS is broken.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#issue4">HTTPS certificate warning</button></h3><div id="issue4" class="accordion-collapse collapse" data-bs-parent="#troubleshooting"><div class="accordion-body">Check that the exact hostname has an active Pages custom-domain association and certificate. Avoid disabling certificate checks; wait for provisioning or inspect TLS configuration.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#issue5">Old content or unexpected redirect</button></h3><div id="issue5" class="accordion-collapse collapse" data-bs-parent="#troubleshooting"><div class="accordion-body">Inspect the active Pages deployment, caching rules, browser cache, and 301 redirect history. Use a private window and check the response chain. Permanent redirects may be cached by browsers.</div></div></div></div><div class="mt-4 wh-note"><strong>Deployment hygiene:</strong> Keep all HTML files, <code>styles.css</code>, <code>script.js</code>, and referenced assets together with the correct relative paths when publishing a new Pages deployment. Uploading only <code>index.html</code> and <code>web-hosting.html</code> without the existing shared assets will leave the styling and images incomplete.</div></section>
-<section class="wh-section wh-anchor" id="glossary"><span class="wh-kicker">09 / Recap</span><h2 class="wh-heading mt-2">One-minute glossary</h2><div class="row g-3 mt-2"><div class="col-md-6"><div class="wh-card"><h3>Registration versus hosting</h3><p class="mb-0">The registrar maintains your right to use the domain; the hosting platform serves your deployed website files.</p></div></div><div class="col-md-6"><div class="wh-card"><h3>Authoritative DNS versus resolver</h3><p class="mb-0">Cloudflare authoritative DNS publishes answers; a recursive resolver retrieves and caches them for clients.</p></div></div><div class="col-md-6"><div class="wh-card"><h3>CNAME versus 301</h3><p class="mb-0">A CNAME changes how a hostname resolves in DNS. A 301 changes the URL the browser requests.</p></div></div><div class="col-md-6"><div class="wh-card"><h3>Cloudflare DNS versus Pages</h3><p class="mb-0">DNS helps browsers reach Cloudflare; Pages maps your hostname to the static site content.</p></div></div></div><div class="text-center mt-5"><h3 class="h4 fw-bold">From a domain name to a real website</h3><p class="text-secondary">Registration → Delegation → Resolution → TLS → HTTP → Edge routing → Static asset delivery</p><a href="index.html" class="btn btn-primary rounded-pill px-4">Return to homepage <i class="bi bi-arrow-right ms-1"></i></a></div></section>
-</main></div></div>
-<footer class="site-footer mt-5"><div class="container-xxl py-5"><div class="row g-4"><div class="col-lg-6"><div class="d-flex align-items-center gap-2 mb-3"><span class="brand-badge">BD</span><strong class="fs-5">Binit Datta</strong></div><p class="text-secondary">Enterprise technology leader, architect, author and educator connecting business context with secure modern engineering.</p></div><div class="col-lg-3"><h6>Explore</h6><a href="architecture.html">Architecture</a><a href="technology.html">Technology</a><a href="web-hosting.html">Web Hosting</a></div><div class="col-lg-3"><h6>Connect</h6><a href="https://www.linkedin.com/in/binitdatta/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.youtube.com/@SecureAILearningLab" target="_blank" rel="noopener">YouTube</a><a href="contact.html">Contact</a></div></div><hr><div class="small text-secondary">© <span id="year"></span> Binit Datta. Educational reference for static web hosting.</div></div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="script.js"></script><script>document.getElementById('year').textContent=new Date().getFullYear()</script></body></html>
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            color: var(--wh-ink)
+        }
+
+        .wh-hero {
+            background: radial-gradient(circle at 80% 20%, #d6ebff, transparent 42%), linear-gradient(125deg, #f7fbff, #e9f4ff);
+            padding: 5.5rem 0 4rem;
+            border-bottom: 1px solid #d6e4f2
+        }
+
+        .wh-kicker {
+            font-size: .75rem;
+            letter-spacing: .16em;
+            font-weight: 800;
+            color: #1766b5;
+            text-transform: uppercase
+        }
+
+        .wh-title {
+            font-family: 'Libre Baskerville', serif;
+            font-size: clamp(2.3rem, 4.5vw, 4.6rem);
+            letter-spacing: -.04em;
+            line-height: 1.17
+        }
+
+        .wh-lead {
+            font-size: 1.12rem;
+            color: #566981;
+            max-width: 790px
+        }
+
+        .wh-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            background: #fff;
+            border: 1px solid #d5e5f5;
+            border-radius: 999px;
+            padding: .48rem .85rem;
+            color: #244e80;
+            font-weight: 650;
+            font-size: .84rem
+        }
+
+        .wh-section {
+            padding: 4.5rem 0
+        }
+
+        .wh-section:nth-of-type(even) {
+            background: #f5f9fd
+        }
+
+        .wh-heading {
+            font-family: 'Libre Baskerville', serif;
+            font-size: clamp(1.8rem, 3vw, 2.65rem)
+        }
+
+        .wh-sub {
+            color: #5b6d84;
+            max-width: 850px
+        }
+
+        .wh-card {
+            background: #fff;
+            border: 1px solid #dce7f2;
+            border-radius: 20px;
+            padding: 1.5rem;
+            height: 100%;
+            box-shadow: 0 10px 28px rgba(26, 73, 120, .045)
+        }
+
+        .wh-card h3 {
+            font-size: 1.13rem;
+            font-weight: 800
+        }
+
+        .wh-icon {
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: #e8f2ff;
+            color: #1265ef;
+            font-size: 1.4rem;
+            margin-bottom: 1rem
+        }
+
+        .wh-note {
+            background: #eef6ff;
+            border-left: 4px solid #1265ef;
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem
+        }
+
+        .wh-code {
+            background: #101f37;
+            color: #dceeff;
+            padding: 1.15rem 1.3rem;
+            border-radius: 12px;
+            overflow-x: auto;
+            font-size: .91rem
+        }
+
+        .wh-code code {
+            color: inherit
+        }
+
+        .wh-table th {
+            background: #eaf3ff;
+            color: #183d6b
+        }
+
+        .wh-table td, .wh-table th {
+            padding: .9rem;
+            vertical-align: middle
+        }
+
+        .wh-timeline {
+            position: relative;
+            padding-left: 2.9rem
+        }
+
+        .wh-timeline:before {
+            content: "";
+            position: absolute;
+            left: 18px;
+            top: 12px;
+            bottom: 12px;
+            width: 2px;
+            background: #bfd8f6
+        }
+
+        .wh-step {
+            position: relative;
+            background: #fff;
+            border: 1px solid #dce7f2;
+            border-radius: 16px;
+            padding: 1.3rem 1.5rem;
+            margin-bottom: 1rem
+        }
+
+        .wh-number {
+            position: absolute;
+            left: -2.9rem;
+            top: 1.1rem;
+            background: #1767ee;
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-weight: 800
+        }
+
+        .wh-step h3 {
+            font-size: 1.08rem;
+            font-weight: 800
+        }
+
+        .wh-arch {
+            border: 2px dashed #92b8e6;
+            border-radius: 24px;
+            min-height: 340px;
+            background: linear-gradient(140deg, #f3f9ff, #e9f3ff);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem
+        }
+
+        .wh-arch i {
+            font-size: 3.5rem;
+            color: #337cd9
+        }
+
+        .wh-anchor {
+            scroll-margin-top: 110px
+        }
+
+        .wh-small {
+            font-size: .88rem;
+            color: #65778c
+        }
+
+        .wh-nav {
+            position: sticky;
+            top: 85px
+        }
+
+        .wh-nav .list-group-item {
+            border: 0;
+            border-left: 3px solid transparent;
+            background: transparent;
+            font-size: .88rem;
+            padding: .6rem .8rem
+        }
+
+        .wh-nav .list-group-item:hover {
+            color: #1265ef;
+            border-left-color: #1265ef;
+            background: #eaf3ff
+        }
+
+        .wh-tag {
+            background: #eaf3ff;
+            color: #23568e;
+            padding: .25rem .6rem;
+            border-radius: 6px;
+            font-size: .78rem;
+            font-weight: 700
+        }
+
+        .wh-matrix {
+            display: grid;
+            grid-template-columns:repeat(4, minmax(0, 1fr));
+            gap: .7rem
+        }
+
+        .wh-matrix > div {
+            background: white;
+            border: 1px solid #dce7f2;
+            border-radius: 14px;
+            padding: 1rem;
+            text-align: center
+        }
+
+        .wh-matrix i {
+            display: block;
+            color: #1265ef;
+            font-size: 1.8rem;
+            margin-bottom: .4rem
+        }
+
+        @media (max-width: 767px) {
+            .wh-matrix {
+                grid-template-columns:repeat(2, 1fr)
+            }
+
+            .wh-section {
+                padding: 3rem 0
+            }
+
+            .wh-hero {
+                padding: 3.5rem 0
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-xl navbar-light sticky-top bd-navbar shadow-sm">
+    <div class="container-xxl">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <span class="brand-badge">BD</span>
+            <span class="brand-text"><strong>Binit Datta</strong><small>Enterprise Technology • Architecture • AI</small></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-xl-center gap-xl-1">
+                <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="business-verticals.html" role="button"
+                       data-bs-toggle="dropdown">Business Verticals</a>
+                    <ul class="dropdown-menu dropdown-menu-lg-end mega-menu p-3">
+                        <li><h6 class="dropdown-header">Industry Experience</h6></li>
+                        <li><a class="dropdown-item" href="business-verticals.html#erp">ERP, Manufacturing &
+                            Industrial</a></li>
+                        <li><a class="dropdown-item" href="business-verticals.html#healthcare">Healthcare & Pharmacy</a>
+                        </li>
+                        <li><a class="dropdown-item" href="business-verticals.html#retail">Retail, eCommerce &
+                            Consumer</a></li>
+                        <li><a class="dropdown-item" href="business-verticals.html#finance">Financial Services &
+                            Mortgage</a></li>
+                        <li><a class="dropdown-item" href="business-verticals.html#supplychain">Supply Chain &
+                            Source-to-Pay</a></li>
+                        <li><a class="dropdown-item" href="business-verticals.html#other">Telecom, Services & Due
+                            Diligence</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item fw-semibold" href="business-verticals.html">View all 18+ verticals
+                            →</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="architecture.html" role="button"
+                       data-bs-toggle="dropdown">Architecture</a>
+                    <ul class="dropdown-menu dropdown-menu-lg-end mega-menu p-3">
+                        <li><h6 class="dropdown-header">Architecture Portfolio</h6></li>
+                        <li><a class="dropdown-item" href="architecture.html#erp-architecture">ERP & Enterprise
+                            Platforms</a></li>
+                        <li><a class="dropdown-item" href="architecture.html#iam-architecture">IAM & Security</a></li>
+                        <li><a class="dropdown-item" href="architecture.html#data-architecture">Cloud, Data &
+                            Analytics</a></li>
+                        <li><a class="dropdown-item" href="architecture.html#ai-architecture">RAG & Agentic AI</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item fw-semibold" href="architecture.html">Architecture archive: 1995 →
+                            present</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="technology.html" role="button" data-bs-toggle="dropdown">Technology</a>
+                    <ul class="dropdown-menu dropdown-menu-lg-end mega-menu p-3">
+                        <li><a class="dropdown-item" href="technology.html#iam">IAM & Cybersecurity</a></li>
+                        <li><a class="dropdown-item" href="technology.html#java">Java, Spring & Quarkus</a></li>
+                        <li><a class="dropdown-item" href="technology.html#cloud">Cloud, Kubernetes & DevSecOps</a></li>
+                        <li><a class="dropdown-item" href="technology.html#integration">Microservices, APIs &
+                            Integration</a></li>
+                        <li><a class="dropdown-item" href="technology.html#data">Data, SQL & Analytics</a></li>
+                        <li><a class="dropdown-item" href="technology.html#ai">GenAI, RAG & Agentic AI</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item fw-semibold" href="technology.html">View technology portfolio →</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="books.html" role="button"
+                                                 data-bs-toggle="dropdown">Books</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="books.html#identity">Identity & Security</a></li>
+                        <li><a class="dropdown-item" href="books.html#spring">Spring & Microservices</a></li>
+                        <li><a class="dropdown-item" href="books.html#ai">AI & RAG</a></li>
+                        <li><a class="dropdown-item" href="books.html#architecture">Enterprise Architecture</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item fw-semibold" href="books.html">All books →</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="articles.html" role="button"
+                                                 data-bs-toggle="dropdown">Articles</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="articles.html#ai">AI & Agentic Systems</a></li>
+                        <li><a class="dropdown-item" href="articles.html#security">Security & Identity</a></li>
+                        <li><a class="dropdown-item" href="articles.html#architecture">Architecture & Microservices</a>
+                        </li>
+                        <li><a class="dropdown-item" href="articles.html#leadership">Leadership & Workforce</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item fw-semibold" href="articles.html">Selected articles →</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="videos.html" role="button"
+                                                 data-bs-toggle="dropdown">Videos</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="videos.html#agentic">Agentic AI</a></li>
+                        <li><a class="dropdown-item" href="videos.html#iam">IAM & Keycloak</a></li>
+                        <li><a class="dropdown-item" href="videos.html#spring">Spring Boot & Security</a></li>
+                        <li><a class="dropdown-item" href="videos.html#microservices">Microservices & Cloud</a></li>
+                        <li><a class="dropdown-item" href="videos.html#python">Python, LangChain & LangGraph</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item fw-semibold" href="https://www.youtube.com/@SecureAILearningLab"
+                               target="_blank">Secure AI Learning Lab ↗</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" aria-current="page" href="#" id="hostingDropdown"
+                       role="button" data-bs-toggle="dropdown" aria-expanded="false">Hosting</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="hostingDropdown">
+                        <li><a class="dropdown-item active" aria-current="page" href="web-hosting.html">Concepts</a>
+                        </li>
+                        <li><a class="dropdown-item" href="career-website-deployment-guide.html">Deployment Guide</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ms-xl-2"><a class="btn btn-primary rounded-pill px-3"
+                                                href="contact.html">Connect</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<header class="wh-hero">
+    <div class="container-xxl"><span class="wh-kicker"><i class="bi bi-globe2 me-2"></i>Architecture field guide • DNS → Edge → Pages</span>
+        <h1 class="wh-title mt-3">Web hosting, <span class="text-primary">explained from the browser outward.</span>
+        </h1>
+        <p class="wh-lead mt-4">How a domain registered at Bluehost, authoritative DNS operated by Cloudflare, and a
+            static website deployed on Cloudflare Pages work together to deliver <strong>binitdatta.com</strong>
+            securely around the world.</p>
+        <div class="d-flex flex-wrap gap-2 mt-4"><span class="wh-pill"><i class="bi bi-building"></i>Bluehost registrar</span><span
+                class="wh-pill"><i class="bi bi-diagram-3"></i>Cloudflare DNS</span><span class="wh-pill"><i
+                class="bi bi-cloud-arrow-up"></i>Cloudflare Pages</span><span class="wh-pill"><i
+                class="bi bi-shield-lock"></i>HTTPS / TLS</span><span class="wh-pill"><i
+                class="bi bi-arrow-left-right"></i>301 redirect</span></div>
+        <div class="mt-4"><a class="btn btn-primary rounded-pill px-4 me-2 mb-2" href="#concepts">Learn the concepts <i
+                class="bi bi-arrow-down ms-1"></i></a><a class="btn btn-outline-primary rounded-pill px-4 mb-2"
+                                                         href="#browser-journey">Follow a browser request</a></div>
+    </div>
+</header>
+<div class="container-xxl">
+    <div class="row g-5">
+        <aside class="col-lg-3 d-none d-lg-block">
+            <div class="wh-nav pt-5">
+                <div class="fw-bold mb-2 text-uppercase wh-small">On this page</div>
+                <div class="list-group"><a class="list-group-item" href="#mental-model">Mental model</a><a
+                        class="list-group-item" href="#concepts">Core concepts</a><a class="list-group-item"
+                                                                                     href="#dns-hierarchy">DNS hierarchy
+                    &amp; ICANN</a><a class="list-group-item" href="#dns-resolution">How DNS resolution works</a><a
+                        class="list-group-item" href="#dns-records">DNS record types</a><a class="list-group-item"
+                                                                                           href="#cloudflare-config">Our
+                    configuration</a><a class="list-group-item" href="#browser-journey">Browser journey</a><a
+                        class="list-group-item" href="#www-flow">WWW and redirects</a><a class="list-group-item"
+                                                                                         href="#hosting-ecosystem">Hosting
+                    ecosystem &amp; trust</a><a class="list-group-item" href="#architecture-image">Navigation
+                    architecture</a><a class="list-group-item" href="#operations">Troubleshooting and operations</a><a
+                        class="list-group-item" href="#glossary">Quick glossary</a></div>
+            </div>
+        </aside>
+        <main class="col-lg-9">
+            <section class="wh-section wh-anchor" id="mental-model"><span class="wh-kicker">01 / Big picture</span>
+                <h2 class="wh-heading mt-2">Four different jobs. One working website.</h2>
+                <p class="wh-sub">Buying a domain, publishing DNS records, serving HTTPS traffic and storing website
+                    files are distinct responsibilities. They can be provided by different companies—or by the same
+                    company.</p>
+                <div class="wh-matrix mt-4">
+                    <div><i class="bi bi-person-vcard"></i><strong>Registration</strong>
+                        <div class="wh-small">Who controls the domain?</div>
+                    </div>
+                    <div><i class="bi bi-signpost-split"></i><strong>DNS</strong>
+                        <div class="wh-small">Where should it resolve?</div>
+                    </div>
+                    <div><i class="bi bi-shield-check"></i><strong>Edge</strong>
+                        <div class="wh-small">Who accepts HTTPS?</div>
+                    </div>
+                    <div><i class="bi bi-filetype-html"></i><strong>Hosting</strong>
+                        <div class="wh-small">Where are site assets served?</div>
+                    </div>
+                </div>
+                <div class="wh-note mt-4"><strong>In this deployment:</strong> Bluehost is the registrar; Cloudflare's
+                    assigned nameservers are authoritative for the DNS zone; Cloudflare's edge handles proxied traffic
+                    and TLS; Cloudflare Pages serves the deployed static website.
+                </div>
+            </section>
+            <section class="wh-section wh-anchor" id="concepts"><span class="wh-kicker">02 / Foundations</span>
+                <h2 class="wh-heading mt-2">Core concepts I encountered</h2>
+                <p class="wh-sub">Expand any card to see how the concept applies to My own website.</p>
+                <div class="accordion mt-4" id="conceptAccordion">
+                    <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button " type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#concept0" aria-expanded="true"><span class="me-2 wh-tag">01</span>Domain
+                                owner / registrant
+                            </button>
+                        </h3>
+                        <div id="concept0" class="accordion-collapse collapse show" data-bs-parent="#conceptAccordion">
+                            <div class="accordion-body"><p>The person or organization that holds the right to use a
+                                registered domain for its registration term, subject to registrar and registry policies.
+                                A domain is renewed, not purchased forever.</p>
+                                <div class="wh-note"><strong>In My deployment:</strong> I control binitdatta.com through
+                                    its registrar account; Bluehost is not automatically the web host.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#concept1" aria-expanded="false"><span class="me-2 wh-tag">02</span>Domain
+                                registrar and registry
+                            </button>
+                        </h3>
+                        <div id="concept1" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion">
+                            <div class="accordion-body"><p>A registrar is the accredited retail provider through which
+                                you register and renew a domain. The registry operates the top-level domain database
+                                (for example, .com). ICANN coordinates key naming-system policies and contracts.</p>
+                                <div class="wh-note"><strong>In My deployment:</strong> You manage registration and
+                                    nameserver delegation at Bluehost; the .com registry publishes the delegation.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#concept2" aria-expanded="false"><span class="me-2 wh-tag">03</span>Authoritative
+                                DNS server
+                            </button>
+                        </h3>
+                        <div id="concept2" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion">
+                            <div class="accordion-body"><p>A nameserver that provides authoritative answers for records
+                                in a DNS zone. It is the source of truth for the zone, unlike a caching recursive
+                                resolver.</p>
+                                <div class="wh-note"><strong>In My deployment:</strong> Cloudflare nameservers
+                                    abby.ns.cloudflare.com and kanye.ns.cloudflare.com are delegated for My domain.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#concept3" aria-expanded="false"><span class="me-2 wh-tag">04</span>DNS
+                                server versus DNS resolver
+                            </button>
+                        </h3>
+                        <div id="concept3" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion">
+                            <div class="accordion-body"><p>“DNS server” is a broad term. A recursive resolver looks up
+                                answers for a client and caches them; authoritative nameservers publish the zone’s
+                                records. Root and TLD nameservers guide the resolver through the hierarchy.</p>
+                                <div class="wh-note"><strong>In My deployment:</strong> My browser/OS generally asks a
+                                    configured recursive resolver, which follows or uses cached delegation to
+                                    Cloudflare.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#concept4" aria-expanded="false"><span class="me-2 wh-tag">05</span>Nameserver
+                                (NS) delegation
+                            </button>
+                        </h3>
+                        <div id="concept4" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion">
+                            <div class="accordion-body"><p>The parent DNS zone lists the nameservers responsible for the
+                                child domain. Changing nameservers at the registrar changes delegation, not the HTML
+                                files.</p>
+                                <div class="wh-note"><strong>In My deployment:</strong> You changed Bluehost nameservers
+                                    from Azure DNS to Cloudflare nameservers.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#concept5" aria-expanded="false"><span class="me-2 wh-tag">06</span>Domain,
+                                hostname, apex and subdomain
+                            </button>
+                        </h3>
+                        <div id="concept5" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion">
+                            <div class="accordion-body"><p>binitdatta.com is the registered domain and zone apex (root).
+                                www.binitdatta.com is a hostname under it; “www” is a conventional subdomain label, not
+                                a required Internet service.</p>
+                                <div class="wh-note"><strong>In My deployment:</strong> Both apex and www are separately
+                                    configured as Cloudflare Pages custom domains.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#concept6" aria-expanded="false"><span class="me-2 wh-tag">07</span>DNS
+                                zone and TTL
+                            </button>
+                        </h3>
+                        <div id="concept6" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion">
+                            <div class="accordion-body"><p>A DNS zone is the administratively managed collection of
+                                records. TTL (time to live) tells caching resolvers how long an answer may be reused.
+                                Changes can appear at different times due to caches.</p>
+                                <div class="wh-note"><strong>In My deployment:</strong> My records have TTL Auto;
+                                    changes can take time to be observed across recursive resolvers.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#concept7" aria-expanded="false"><span class="me-2 wh-tag">08</span>CNAME
+                                record
+                            </button>
+                        </h3>
+                        <div id="concept7" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion">
+                            <div class="accordion-body"><p>A canonical-name record aliases one DNS name to another DNS
+                                name. It does not directly contain a server IP address, nor does it perform a browser
+                                HTTP redirect.</p>
+                                <div class="wh-note"><strong>In My deployment:</strong> The www hostname has a CNAME
+                                    target of binitdatta-career.pages.dev. Cloudflare also supports an apex CNAME
+                                    through flattening.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#concept8" aria-expanded="false"><span class="me-2 wh-tag">09</span>Cloudflare
+                                proxy / CDN / edge
+                            </button>
+                        </h3>
+                        <div id="concept8" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion">
+                            <div class="accordion-body"><p>With proxied (orange-cloud) records, visitors generally
+                                connect to Cloudflare edge IPs, where Cloudflare can terminate TLS, apply security and
+                                caching, and route requests to Pages.</p>
+                                <div class="wh-note"><strong>In My deployment:</strong> A DNS lookup does not need to
+                                    expose an individual Pages origin server.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#concept9" aria-expanded="false"><span class="me-2 wh-tag">10</span>Static
+                                web hosting and deployment
+                            </button>
+                        </h3>
+                        <div id="concept9" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion">
+                            <div class="accordion-body"><p>Static hosting serves prebuilt HTML, CSS, JavaScript, images
+                                and other assets without requiring a traditional application server to render each page.
+                                JavaScript can still run in the visitor’s browser.</p>
+                                <div class="wh-note"><strong>In My deployment:</strong> My index.html and other HTML
+                                    pages are deployed to the binitdatta-career Cloudflare Pages project.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#concept10" aria-expanded="false"><span
+                                    class="me-2 wh-tag">11</span>HTTPS, TLS and certificate
+                            </button>
+                        </h3>
+                        <div id="concept10" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion">
+                            <div class="accordion-body"><p>HTTPS is HTTP protected by TLS. During a TLS handshake, the
+                                browser validates a certificate for the requested hostname and negotiates encryption. A
+                                certificate does not itself register a domain.</p>
+                                <div class="wh-note"><strong>In My deployment:</strong> Cloudflare Pages shows SSL
+                                    enabled for binitdatta.com and www.binitdatta.com.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#concept11" aria-expanded="false"><span
+                                    class="me-2 wh-tag">12</span>Custom domain and virtual host routing
+                            </button>
+                        </h3>
+                        <div id="concept11" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion">
+                            <div class="accordion-body"><p>A hosting platform associates a public hostname with a
+                                specific deployment. TLS SNI and HTTP Host/:authority help the edge identify which site
+                                a visitor requested.</p>
+                                <div class="wh-note"><strong>In My deployment:</strong> Cloudflare Pages maps both
+                                    custom hostnames to the binitdatta-career deployment.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#concept12" aria-expanded="false"><span
+                                    class="me-2 wh-tag">13</span>HTTP redirect and canonical URL
+                            </button>
+                        </h3>
+                        <div id="concept12" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion">
+                            <div class="accordion-body"><p>A 301 response instructs the browser to request a different
+                                URL. This happens after DNS and HTTP(S) connection handling; it is distinct from CNAME
+                                resolution. A canonical URL is the preferred public address.</p>
+                                <div class="wh-note"><strong>In My deployment:</strong> My Cloudflare redirect rule
+                                    sends HTTPS www requests to the apex, preserving the path and query string.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#concept13" aria-expanded="false"><span
+                                    class="me-2 wh-tag">14</span>Browser cache and DNS cache
+                            </button>
+                        </h3>
+                        <div id="concept13" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion">
+                            <div class="accordion-body"><p>The browser, operating system and recursive resolver may
+                                cache DNS answers; browsers and CDN edges may cache HTTP assets or redirects. These
+                                caches have different lifetimes and behaviors.</p>
+                                <div class="wh-note"><strong>In My deployment:</strong> A previously cached 301 or DNS
+                                    response can make tests differ across devices or browsers.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#concept14" aria-expanded="false"><span
+                                    class="me-2 wh-tag">15</span>URL path, query and fragment
+                            </button>
+                        </h3>
+                        <div id="concept14" class="accordion-collapse collapse " data-bs-parent="#conceptAccordion">
+                            <div class="accordion-body"><p>In
+                                https://binitdatta.com/architecture?topic=erp#erp-architecture, the scheme is https,
+                                host is binitdatta.com, path is /architecture, query is topic=erp, and fragment is
+                                erp-architecture. The fragment is handled by the browser, not sent in the HTTP
+                                request.</p>
+                                <div class="wh-note"><strong>In My deployment:</strong> My architecture section uses
+                                    #erp-architecture; the browser can preserve it when following a redirect.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="wh-section wh-anchor" id="dns-hierarchy"><span class="wh-kicker">Deep dive / DNS governance and hierarchy</span>
+                <h2 class="wh-heading mt-2">Who governs the DNS namespace—and who answers queries?</h2>
+                <p class="wh-sub">DNS is a distributed, hierarchical naming system. No single DNS server stores every
+                    domain. The hierarchy delegates authority from the root to top-level domains and then to the
+                    authoritative nameservers for individual domains.</p>
+                <div class="row g-3 mt-3">
+                    <div class="col-md-6">
+                        <div class="wh-card">
+                            <div class="wh-icon"><i class="bi bi-globe-americas"></i></div>
+                            <h3>ICANN and IANA</h3>
+                            <p><strong>ICANN</strong> coordinates policies and key identifiers for the global
+                                domain-name system. Through its IANA functions, it coordinates the DNS root zone,
+                                including delegations to TLD operators. ICANN does <em>not</em> resolve every browser
+                                query or directly host My website.</p>
+                            <p class="mb-0"><strong>Root zone management:</strong> IANA coordinates root-zone changes;
+                                the root-zone maintainer and root server operators play separate operational roles.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card">
+                            <div class="wh-icon"><i class="bi bi-diagram-3"></i></div>
+                            <h3>Hierarchy: root → .com → binitdatta.com</h3>
+                            <p><strong>Root (.)</strong> delegates to TLD nameservers. <strong>.com TLD</strong>
+                                nameservers, operated by the .com registry, delegate <code>binitdatta.com</code> to its
+                                assigned authoritative nameservers. <strong>Cloudflare authoritative DNS</strong>
+                                supplies the zone's DNS responses.</p>
+                            <p class="mb-0">My registrar account at Bluehost controls which nameservers are published
+                                for My domain at the registry.</p></div>
+                    </div>
+                </div>
+                <div class="wh-note mt-4"><strong>Why “13 root servers”?</strong> There are <strong>13 named root server
+                    identities</strong>, labeled <code>A.root-servers.net</code> through <code>M.root-servers.net</code>,
+                    not merely 13 physical machines or 13 geographic clusters. The historical count reflects the
+                    original DNS transport/packet-size constraints. Today, independent operators deploy these identities
+                    across <strong>many hundreds of anycast instances worldwide</strong> for resilience, performance,
+                    and global reach. Root servers direct resolvers to TLD nameservers; they generally do not return the
+                    final IP for a website.
+                </div>
+                <figure class="mt-4">
+                    <div class="border rounded-4 p-2 p-lg-3 bg-white shadow-sm"><a
+                            href="assets/images/architecture/dns-hierarchy.png" target="_blank" rel="noopener"
+                            aria-label="Open DNS server hierarchy diagram full size"><img
+                            src="assets/images/architecture/dns-hierarchy.png" class="img-fluid w-100 rounded-3"
+                            alt="Illustration of browser, recursive DNS resolver, root DNS servers, .com TLD nameservers, Cloudflare authoritative DNS, and Cloudflare Pages"
+                            loading="lazy"></a></div>
+                    <figcaption class="wh-small mt-2">DNS server hierarchy — click to inspect the full-size diagram.
+                        Diagram is conceptual: proxied Cloudflare DNS answers are Cloudflare edge IP addresses; CNAMEs
+                        to Pages are configuration targets and are not necessarily exposed directly in public DNS
+                        responses.
+                    </figcaption>
+                </figure>
+            </section>
+            <section class="wh-section wh-anchor" id="dns-resolution"><span class="wh-kicker">Deep dive / Recursive resolution</span>
+                <h2 class="wh-heading mt-2">How the DNS hierarchy resolves My domain</h2>
+                <p class="wh-sub">A recursive resolver does the legwork on behalf of the browser. The following is a
+                    typical <em>cold-cache</em> lookup; caching can skip several of these steps.</p>
+                <div class="accordion mt-4" id="dnsHierarchyAccordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#dnsStep1" aria-expanded="true">1. Browser / operating system asks a
+                                recursive resolver
+                            </button>
+                        </h3>
+                        <div id="dnsStep1" class="accordion-collapse collapse show"
+                             data-bs-parent="#dnsHierarchyAccordion">
+                            <div class="accordion-body">For <code>www.binitdatta.com</code>, the browser may first
+                                consult its own cache and the OS resolver cache. A recursive DNS service (ISP,
+                                enterprise, or public resolver such as <code>1.1.1.1</code>) checks its cached data
+                                before asking other servers.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#dnsStep2">2. Root nameserver returns a referral to .com
+                            </button>
+                        </h3>
+                        <div id="dnsStep2" class="accordion-collapse collapse" data-bs-parent="#dnsHierarchyAccordion">
+                            <div class="accordion-body">When necessary, the resolver asks a root server about the name.
+                                The root responds with a referral containing the authoritative nameservers for the
+                                <code>.com</code> TLD, rather than an address for the site.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#dnsStep3">3. .com TLD returns a referral to Cloudflare
+                            </button>
+                        </h3>
+                        <div id="dnsStep3" class="accordion-collapse collapse" data-bs-parent="#dnsHierarchyAccordion">
+                            <div class="accordion-body">The resolver queries a <code>.com</code> nameserver. The
+                                registry's delegation identifies the authoritative nameservers for
+                                <code>binitdatta.com</code>: <code>abby.ns.cloudflare.com</code> and <code>kanye.ns.cloudflare.com</code>.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#dnsStep4">4. Cloudflare authoritative DNS returns the usable answer
+                            </button>
+                        </h3>
+                        <div id="dnsStep4" class="accordion-collapse collapse" data-bs-parent="#dnsHierarchyAccordion">
+                            <div class="accordion-body">Cloudflare consults the zone configuration. Both the apex and
+                                <code>www</code> are configured as proxied CNAMEs targeting <code>binitdatta-career.pages.dev</code>.
+                                With proxying enabled, public address lookups normally return Cloudflare edge IP
+                                addresses rather than the internal CNAME targets. Cloudflare's apex CNAME flattening
+                                also permits the root hostname to be configured as a CNAME-like record.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#dnsStep5">5. Resolver caches; browser connects to Cloudflare
+                            </button>
+                        </h3>
+                        <div id="dnsStep5" class="accordion-collapse collapse" data-bs-parent="#dnsHierarchyAccordion">
+                            <div class="accordion-body">The recursive resolver returns an IP address to the client and
+                                caches the response according to applicable TTLs and resolver behavior. The browser
+                                connects to Cloudflare's edge over HTTPS. DNS is finished at this point: Cloudflare's
+                                HTTP routing and Pages mapping determine which website is served.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wh-note mt-4"><strong>Important separation:</strong> DNS does not perform the
+                    <code>www</code> → apex redirect. After HTTPS is established for <code>www.binitdatta.com</code>, My
+                    Cloudflare Redirect Rule returns HTTP <strong>301</strong>; the browser then requests <code>https://binitdatta.com/</code>.
+                    Root, TLD, and authoritative DNS servers are not HTTP redirect servers.
+                </div>
+            </section>
+            <section class="wh-section wh-anchor" id="dns-records"><span class="wh-kicker">03 / DNS vocabulary</span>
+                <h2 class="wh-heading mt-2">Know what each DNS record actually does</h2>
+                <div class="table-responsive mt-4">
+                    <table class="table table-bordered wh-table">
+                        <thead>
+                        <tr>
+                            <th>Record</th>
+                            <th>Purpose</th>
+                            <th>Example / caution</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><strong>A</strong></td>
+                            <td>Maps hostname to IPv4 address</td>
+                            <td><code>203.0.113.10</code> (documentation example)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AAAA</strong></td>
+                            <td>Maps hostname to IPv6 address</td>
+                            <td><code>2001:db8::10</code> (documentation example)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CNAME</strong></td>
+                            <td>Aliases a hostname to another DNS name</td>
+                            <td><code>www → binitdatta-career.pages.dev</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>NS</strong></td>
+                            <td>Delegates DNS authority to nameservers</td>
+                            <td><code>abby.ns.cloudflare.com</code>, <code>kanye.ns.cloudflare.com</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>SOA</strong></td>
+                            <td>Zone authority and timing metadata</td>
+                            <td>Maintained by the DNS provider</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MX</strong></td>
+                            <td>Mail server routing</td>
+                            <td>Only relevant if we configure domain email</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TXT</strong></td>
+                            <td>Text metadata, verification, SPF, DMARC and more</td>
+                            <td>Does not serve My HTML</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CAA</strong></td>
+                            <td>Restricts certificate authorities permitted to issue certificates</td>
+                            <td>May affect TLS certificate issuance</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="wh-note"><strong>Why an apex CNAME works here:</strong> Standard DNS CNAME records cannot
+                    coexist with other record types at the same owner name. Cloudflare implements <em>CNAME
+                        flattening</em> at the zone apex, presenting address answers to resolvers while letting us
+                    configure the apex to target a Pages hostname.
+                </div>
+            </section>
+            <section class="wh-section wh-anchor" id="cloudflare-config"><span
+                    class="wh-kicker">04 / What we configured</span>
+                <h2 class="wh-heading mt-2">My actual Cloudflare setup</h2>
+                <div class="row g-3 mt-2">
+                    <div class="col-md-6">
+                        <div class="wh-card">
+                            <div class="wh-icon"><i class="bi bi-person-lock"></i></div>
+                            <h3>1. Registrar delegation</h3>
+                            <p>At Bluehost, I changed the domain’s nameservers to Cloudflare’s assigned pair.</p>
+                            <div class="wh-code"><code>abby.ns.cloudflare.com<br>kanye.ns.cloudflare.com</code></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card">
+                            <div class="wh-icon"><i class="bi bi-hdd-network"></i></div>
+                            <h3>2. Cloudflare DNS records</h3>
+                            <p>Cloudflare manages the DNS zone. Both hostnames are configured as proxied CNAMEs
+                                targeting the Pages project.</p>
+                            <div class="wh-code"><code>@ → binitdatta-career.pages.dev<br>www →
+                                binitdatta-career.pages.dev</code></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card">
+                            <div class="wh-icon"><i class="bi bi-cloud-check"></i></div>
+                            <h3>3. Pages custom domains</h3>
+                            <p>Inside the <code>binitdatta-career</code> Pages project, I added
+                                <code>binitdatta.com</code> and <code>www.binitdatta.com</code>. Both subsequently
+                                showed <strong>Active</strong> with SSL enabled.</p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card">
+                            <div class="wh-icon"><i class="bi bi-arrow-repeat"></i></div>
+                            <h3>4. Canonical-host redirect</h3>
+                            <p>I deployed a Cloudflare Single Redirect: requests for the HTTPS <code>www</code>
+                                hostname receive a <strong>301</strong> pointing to the root hostname.</p>
+                            <div class="wh-code"><code>https://www.binitdatta.com/*<br>↓ 301<br>https://binitdatta.com/${1}</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert alert-warning mt-4 mb-0"><i class="bi bi-info-circle me-2"></i><strong>Important
+                    distinction:</strong> The configuration above is based on the Cloudflare screens from this setup. A
+                    live request can additionally be affected by cache, WAF rules, and future changes. The redirect rule
+                    shown matches <strong>HTTPS www</strong>; redirecting plain HTTP www consistently also depends on My
+                    HTTPS/redirect settings.
+                </div>
+            </section>
+            <section class="wh-section wh-anchor" id="browser-journey"><span
+                    class="wh-kicker">05 / Request lifecycle</span>
+                <h2 class="wh-heading mt-2">What happens when I type https://binitdatta.com?</h2>
+                <p class="wh-sub">The precise network messages depend on caching, browser features and connection reuse,
+                    but this is the typical logical sequence for a fresh visit.</p>
+                <div class="wh-timeline mt-4">
+                    <div class="wh-step"><span class="wh-number">1</span>
+                        <h3>Parse the URL</h3>
+                        <p class="mb-0">The browser identifies the HTTPS scheme, hostname <code>binitdatta.com</code>,
+                            path <code>/</code> and default HTTPS port <code>443</code>. It checks whether an existing
+                            connection or cached response can be reused.</p></div>
+                    <div class="wh-step"><span class="wh-number">2</span>
+                        <h3>Find a DNS answer</h3>
+                        <p class="mb-0">The browser/OS consults DNS caches and typically asks a recursive DNS resolver.
+                            On a cache miss, the resolver can follow root → <code>.com</code> TLD → Cloudflare
+                            authoritative nameserver delegation. Cloudflare provides the appropriate DNS answer; because
+                            the record is proxied, the browser normally receives Cloudflare edge addresses.</p></div>
+                    <div class="wh-step"><span class="wh-number">3</span>
+                        <h3>Connect to a Cloudflare edge</h3>
+                        <p class="mb-0">The browser establishes a network connection to a Cloudflare IP address. The
+                            route often uses anycast to reach a nearby available Cloudflare location. The IP alone does
+                            not identify which customer site should be served.</p></div>
+                    <div class="wh-step"><span class="wh-number">4</span>
+                        <h3>Negotiate TLS and validate identity</h3>
+                        <p class="mb-0">The browser and Cloudflare negotiate TLS; the browser checks that the
+                            certificate is trusted and valid for <code>binitdatta.com</code>. SNI commonly indicates the
+                            requested hostname during the TLS handshake.</p></div>
+                    <div class="wh-step"><span class="wh-number">5</span>
+                        <h3>Send the HTTP request</h3>
+                        <p class="mb-2">Inside the encrypted connection, the browser sends an HTTP request containing
+                            the path and host identity (Host header in HTTP/1.1 or <code>:authority</code> in HTTP/2/3).
+                        </p>
+                        <div class="wh-code"><code>GET / HTTP/1.1<br>Host: binitdatta.com</code></div>
+                    </div>
+                    <div class="wh-step"><span class="wh-number">6</span>
+                        <h3>Apply edge routing and security</h3>
+                        <p class="mb-0">Cloudflare can evaluate relevant security, redirect, and caching rules. Its
+                            Pages custom-domain mapping identifies the <code>binitdatta-career</code> project for the
+                            requested hostname.</p></div>
+                    <div class="wh-step"><span class="wh-number">7</span>
+                        <h3>Deliver the static site</h3>
+                        <p class="mb-0">Cloudflare Pages returns the deployed entry document (typically
+                            <code>index.html</code> for <code>/</code>), either from edge cache or the Pages delivery
+                            infrastructure. There is no requirement to execute a Spring Boot or Flask server for this
+                            static page.</p></div>
+                    <div class="wh-step"><span class="wh-number">8</span>
+                        <h3>Load CSS, JavaScript, images and fonts</h3>
+                        <p class="mb-0">The browser parses HTML, requests referenced assets such as
+                            <code>styles.css</code>, <code>script.js</code>, and <code>assets/images/...</code>,
+                            executes client-side JavaScript, and paints the page. Third-party Bootstrap and Google Fonts
+                            URLs are fetched from their respective hosts.</p></div>
+                    <div class="wh-step"><span class="wh-number">9</span>
+                        <h3>Navigate and reuse caches</h3>
+                        <p class="mb-0">Further page visits may reuse DNS results, TLS connections, and cached assets.
+                            Links to <code>architecture.html</code> request another static document; an anchor such as
+                            <code>#erp-architecture</code> navigates within the loaded document in the browser.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="wh-section wh-anchor" id="www-flow"><span class="wh-kicker">06 / Compare both URLs</span>
+                <h2 class="wh-heading mt-2">What changes when the visitor enters www?</h2>
+                <div class="row g-3 mt-3">
+                    <div class="col-md-6">
+                        <div class="wh-card"><span class="wh-tag">Direct visit</span>
+                            <h3 class="mt-3">https://binitdatta.com</h3>
+                            <p>The browser resolves the apex hostname, connects securely to Cloudflare, and requests the
+                                site directly through the Pages custom-domain mapping.</p>
+                            <div class="wh-code"><code>Browser → Cloudflare edge<br>→ Pages → index.html</code></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card"><span class="wh-tag">Canonical redirect</span>
+                            <h3 class="mt-3">https://www.binitdatta.com</h3>
+                            <p>The browser resolves <code>www</code>, establishes HTTPS to Cloudflare, and receives the
+                                configured <strong>301</strong>. It then makes a <em>new</em> request to the apex
+                                hostname.</p>
+                            <div class="wh-code"><code>Browser → Cloudflare edge<br>← 301 Location:
+                                https://binitdatta.com/<br>Browser → binitdatta.com → Pages</code></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive mt-4">
+                    <table class="table table-bordered wh-table">
+                        <thead>
+                        <tr>
+                            <th>Incoming request</th>
+                            <th>Expected redirect target</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><code>https://www.binitdatta.com/</code></td>
+                            <td><code>https://binitdatta.com/</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>https://www.binitdatta.com/architecture</code></td>
+                            <td><code>https://binitdatta.com/architecture</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>https://www.binitdatta.com/articles?topic=ai</code></td>
+                            <td><code>https://binitdatta.com/articles?topic=ai</code> when Preserve query string is
+                                enabled
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>https://www.binitdatta.com/architecture#erp-architecture</code></td>
+                            <td><code>https://binitdatta.com/architecture#erp-architecture</code> in normal browser
+                                navigation; the fragment never travels in the HTTP request
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="wh-note"><strong>CNAME ≠ redirect:</strong> The CNAME controls DNS naming; it does not
+                    change the URL in the address bar. The <strong>HTTP 301</strong> response is what instructs the
+                    browser to navigate to the canonical hostname.
+                </div>
+            </section>
+            <section class="wh-section wh-anchor" id="hosting-ecosystem">
+                <span class="wh-kicker">Architecture illustration / Organizations, infrastructure &amp; trust</span>
+                <h2 class="wh-heading mt-2">The complete web hosting ecosystem</h2>
+                <p class="wh-sub">This illustration brings together the organizations that administer domain names, the
+                    infrastructure that resolves them, the certificate trust system, and the Cloudflare services that
+                    deliver My website. The numbered boxes describe <strong>roles</strong>, not a single serial packet
+                    route: domain registration and certificate issuance happen outside the normal per-visit DNS/HTTP
+                    sequence.</p>
+                <figure class="mt-4">
+                    <div class="border rounded-4 p-2 p-lg-3 bg-white shadow-sm"><a
+                            href="assets/images/architecture/web-hosting-ecosystem.png" target="_blank" rel="noopener"
+                            title="Open full-size web hosting ecosystem diagram"><img
+                            src="assets/images/architecture/web-hosting-ecosystem.png" class="img-fluid w-100 rounded-3"
+                            alt="Complete web hosting ecosystem with registrar, ICANN, recursive resolver, DNS root and TLD servers, Cloudflare authoritative DNS, certificate authorities, edge, Pages, custom hostnames, and browser"
+                            loading="lazy"></a></div>
+                    <figcaption class="wh-small mt-2">Click the diagram to view it at full resolution. The image is a
+                        conceptual teaching aid; the descriptions below clarify important protocol boundaries.
+                    </figcaption>
+                </figure>
+                <h3 class="h4 fw-bold mt-5 mb-3">Roles and responsibilities of all 11 components</h3>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="wh-card h-100"><span class="wh-tag">Component 01</span>
+                            <h3 class="h5 mt-3">Domain registrar — Bluehost</h3>
+                            <p class="mb-0">Bluehost is the retail registrar through which the domain is registered and
+                                renewed. The registrant controls its registration and changes the delegated nameservers
+                                in the registrar account. Registration does not store or serve the website.</p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card h-100"><span class="wh-tag">Component 02</span>
+                            <h3 class="h5 mt-3">ICANN, IANA, and the registry</h3>
+                            <p class="mb-0">ICANN coordinates policies and contracts for the domain-name system; IANA
+                                functions coordinate the DNS root zone. Verisign operates the .com registry and its TLD
+                                nameservers. ICANN does not handle each visitor’s DNS lookup or host My pages.</p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card h-100"><span class="wh-tag">Component 03</span>
+                            <h3 class="h5 mt-3">Recursive DNS resolver</h3>
+                            <p class="mb-0">A recursive resolver, commonly provided by an ISP or a public DNS service,
+                                answers the client’s hostname lookup. It checks its cache first and, when necessary,
+                                follows the DNS hierarchy. The browser or operating system may also cache answers.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card h-100"><span class="wh-tag">Component 04</span>
+                            <h3 class="h5 mt-3">Root DNS server system</h3>
+                            <p class="mb-0">The root zone has 13 named root-server identities (A through M), run by 12
+                                independent operators and replicated across many anycast sites worldwide. Root servers
+                                refer resolvers to the appropriate TLD nameservers; they do not normally return the IP
+                                address of My website.</p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card h-100"><span class="wh-tag">Component 05</span>
+                            <h3 class="h5 mt-3">.com TLD nameservers</h3>
+                            <p class="mb-0">The .com top-level-domain nameservers, operated by the .com registry,
+                                provide delegation information for binitdatta.com, pointing resolvers toward the
+                                domain’s authoritative nameservers. They do not contain the website’s HTML.</p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card h-100"><span class="wh-tag">Component 06</span>
+                            <h3 class="h5 mt-3">Authoritative DNS — Cloudflare</h3>
+                            <p class="mb-0">Cloudflare is authoritative for the binitdatta.com DNS zone through the
+                                delegated nameservers. It manages records for the apex and www hostnames, pointing the
+                                Pages custom domains to binitdatta-career.pages.dev. With proxying enabled, public DNS
+                                typically returns Cloudflare edge addresses.</p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card h-100"><span class="wh-tag">Component 07</span>
+                            <h3 class="h5 mt-3">Certificate authorities and trust stores</h3>
+                            <p class="mb-0">A certificate authority validates the appropriate domain-control evidence
+                                before issuing a TLS certificate. Cloudflare provisions certificates for active custom
+                                domains. During a TLS handshake, the visitor’s browser validates the certificate chain,
+                                hostname, validity period, and trust against its trust store; certificate revocation
+                                checks depend on client policy.</p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card h-100"><span class="wh-tag">Component 08</span>
+                            <h3 class="h5 mt-3">Cloudflare edge and network security</h3>
+                            <p class="mb-0">The browser connects to a Cloudflare edge IP. Cloudflare terminates the
+                                HTTPS connection, applies relevant security and redirect rules, and may serve cached
+                                static assets. The configured www-to-apex 301 is an HTTP response from this layer; it is
+                                not a DNS operation.</p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card h-100"><span class="wh-tag">Component 09</span>
+                            <h3 class="h5 mt-3">Cloudflare Pages deployment</h3>
+                            <p class="mb-0">The deployed static site is associated with binitdatta-career.pages.dev and
+                                both custom hostnames. Pages distributes and serves HTML, CSS, JavaScript, and image
+                                assets through Cloudflare’s infrastructure. Pages is a hosting/deployment platform, not
+                                necessarily a single origin server.</p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card h-100"><span class="wh-tag">Component 10</span>
+                            <h3 class="h5 mt-3">Custom hostnames, certificates, and redirects</h3>
+                            <p class="mb-0">Both binitdatta.com and www.binitdatta.com are configured as Pages custom
+                                domains with SSL enabled. A permanent 301 rule redirects HTTPS requests for www to the
+                                apex hostname, preserving paths and, when enabled in the rule, query strings.</p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card h-100"><span class="wh-tag">Component 11</span>
+                            <h3 class="h5 mt-3">End-user browser</h3>
+                            <p class="mb-0">The browser parses the URL, obtains a DNS answer, establishes an encrypted
+                                HTTPS connection, sends HTTP requests, processes any 301 redirect, downloads assets, and
+                                renders the website. Subsequent navigation can reuse cached DNS, connections, and static
+                                resources.</p></div>
+                    </div>
+                </div>
+                <div class="wh-note mt-4"><strong>Additional essential participants:</strong> The <strong>.com registry
+                    (Verisign)</strong> publishes TLD delegation; the <strong>registrant</strong> controls the domain;
+                    the <strong>operating system and its trust store</strong> assist DNS and TLS validation; the
+                    <strong>network/ISP and routing system</strong> carry packets to Cloudflare anycast addresses; and
+                    the <strong>browser's HTTP cache</strong> can avoid repeat downloads. These roles complement the 11
+                    labeled blocks.
+                </div>
+                <h3 class="h4 fw-bold mt-5 mb-3">Three different workflows — do not confuse them</h3>
+                <div class="row g-3">
+                    <div class="col-lg-4">
+                        <div class="wh-card h-100"><span class="wh-tag">Administrative setup</span>
+                            <h3 class="h5 mt-3">Registration and delegation</h3>
+                            <p class="mb-0">Registrant → Bluehost registrar → .com registry delegation → Cloudflare
+                                authoritative nameservers. This is configured ahead of time, not repeated for every
+                                visitor.</p></div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="wh-card h-100"><span class="wh-tag">Name resolution</span>
+                            <h3 class="h5 mt-3">DNS lookup</h3>
+                            <p class="mb-0">Client → recursive resolver → root referral → .com referral → Cloudflare
+                                authoritative answer. Cached information may skip some or all upstream queries.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="wh-card h-100"><span class="wh-tag">Secure content delivery</span>
+                            <h3 class="h5 mt-3">TLS, redirect, Pages</h3>
+                            <p class="mb-0">Browser → Cloudflare edge TLS handshake → browser validates certificate →
+                                HTTP 301 for www → new apex request → Pages content → browser rendering.</p></div>
+                    </div>
+                </div>
+                <div class="wh-note mt-4"><strong>Certificate distinction:</strong> The CA issues a certificate after
+                    domain-control validation; the browser validates the certificate presented by the edge during TLS.
+                    Certificate issuance is not ordinarily performed during every page visit. <strong>Root-server
+                        distinction:</strong> “13” refers to root-server identities, not just 13 machines or 13 physical
+                    clusters.
+                </div>
+            </section>
+            <section class="wh-section wh-anchor" id="architecture-image"><span class="wh-kicker">Architecture illustration / End-to-end request</span>
+                <h2 class="wh-heading mt-2">Browser-to-Cloudflare navigation architecture</h2>
+                <p class="wh-sub">The diagram connects the DNS hierarchy to the HTTPS request, Cloudflare edge
+                    processing, My canonical-host redirect, and Cloudflare Pages content delivery. Click the image to
+                    inspect it at full resolution.</p>
+                <figure class="mt-4">
+                    <div class="border rounded-4 p-2 p-lg-3 bg-white shadow-sm"><a
+                            href="assets/images/architecture/web-hosting-navigation-architecture.png" target="_blank"
+                            rel="noopener"><img src="assets/images/architecture/web-hosting-navigation-architecture.png"
+                                                class="img-fluid w-100 rounded-3"
+                                                alt="Eight-stage navigation diagram: browser, recursive DNS, Cloudflare authoritative DNS, edge connection, TLS, redirect rules, Pages hosting, and rendered website"
+                                                loading="lazy"></a></div>
+                    <figcaption class="wh-small mt-2">End-to-end conceptual architecture for binitdatta.com. Both
+                        hostnames use proxied CNAME configuration; public DNS normally exposes Cloudflare edge addresses
+                        rather than the underlying Pages CNAME.
+                    </figcaption>
+                </figure>
+                <div class="row g-3 mt-3">
+                    <div class="col-md-6">
+                        <div class="wh-card"><span class="wh-tag">01 → 02</span>
+                            <h3 class="mt-3">Browser entry and recursive lookup</h3>
+                            <p class="mb-0">A visitor enters the URL. The browser or operating system requests DNS
+                                resolution, using caches where possible. On a cache miss, a recursive resolver follows
+                                root, TLD, and authoritative delegations.</p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card"><span class="wh-tag">03 → 04</span>
+                            <h3 class="mt-3">Authoritative answer and edge connection</h3>
+                            <p class="mb-0">Cloudflare's authoritative nameservers answer for the zone. Because the DNS
+                                records are proxied, the browser connects to a Cloudflare anycast edge IP. Cloudflare's
+                                network routes the connection to an available edge location.</p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card"><span class="wh-tag">05 → 06</span>
+                            <h3 class="mt-3">TLS and canonical redirect</h3>
+                            <p class="mb-0">The browser validates Cloudflare's certificate and establishes HTTPS. For
+                                <code>www.binitdatta.com</code>, My active Redirect Rule returns HTTP
+                                <strong>301</strong> to the corresponding apex URL, preserving the path and configured
+                                query string. For the apex hostname, this redirect step is skipped.</p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card"><span class="wh-tag">07 → 08</span>
+                            <h3 class="mt-3">Pages delivery and browser rendering</h3>
+                            <p class="mb-0">Cloudflare maps <code>binitdatta.com</code> to the
+                                <code>binitdatta-career</code> Pages project, returns HTML and other static assets, and
+                                the browser constructs and renders the document. CSS, JavaScript, fonts, and images may
+                                trigger additional requests.</p></div>
+                    </div>
+                </div>
+                <div class="wh-note mt-4"><strong>Read the diagram as two possible paths:</strong> <code>https://binitdatta.com</code>
+                    goes straight from edge handling to Pages delivery; <code>https://www.binitdatta.com</code> first
+                    receives a 301 and initiates a new request to the apex. The Pages hostname <code>binitdatta-career.pages.dev</code>
+                    identifies the deployment target—it is not a mandatory browser-visible redirect or a separate DNS
+                    hop after TLS.
+                </div>
+            </section>
+            <section class="wh-section wh-anchor" id="operations"><span
+                    class="wh-kicker">08 / Operate and troubleshoot</span>
+                <h2 class="wh-heading mt-2">How to diagnose problems without changing the wrong layer</h2>
+                <div class="accordion mt-4" id="troubleshooting">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#issue1">Domain
+                                does not resolve
+                            </button>
+                        </h3>
+                        <div id="issue1" class="accordion-collapse collapse show" data-bs-parent="#troubleshooting">
+                            <div class="accordion-body">Verify registrar nameserver delegation, Cloudflare zone status,
+                                CNAME records, and DNS propagation. DNS failures occur before the browser can send a
+                                normal HTTPS request.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#issue2">Cloudflare Pages says “Verifying” or “undefined”
+                            </button>
+                        </h3>
+                        <div id="issue2" class="accordion-collapse collapse" data-bs-parent="#troubleshooting">
+                            <div class="accordion-body">Compare the required custom-domain CNAME target against the DNS
+                                zone, verify proxy settings, and allow certificate/domain provisioning time. A dashboard
+                                status may lag behind successful traffic; do not repeatedly delete working records.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#issue3">403 Forbidden or unexpected block
+                            </button>
+                        </h3>
+                        <div id="issue3" class="accordion-collapse collapse" data-bs-parent="#troubleshooting">
+                            <div class="accordion-body">A 403 is an HTTP response, so DNS and at least some network
+                                connectivity succeeded. Check Cloudflare security events, access controls, custom-domain
+                                state, and whether the Pages <code>pages.dev</code> URL works. Do not assume a 403
+                                proves DNS is broken.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#issue4">HTTPS certificate warning
+                            </button>
+                        </h3>
+                        <div id="issue4" class="accordion-collapse collapse" data-bs-parent="#troubleshooting">
+                            <div class="accordion-body">Check that the exact hostname has an active Pages custom-domain
+                                association and certificate. Avoid disabling certificate checks; wait for provisioning
+                                or inspect TLS configuration.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#issue5">Old content or unexpected redirect
+                            </button>
+                        </h3>
+                        <div id="issue5" class="accordion-collapse collapse" data-bs-parent="#troubleshooting">
+                            <div class="accordion-body">Inspect the active Pages deployment, caching rules, browser
+                                cache, and 301 redirect history. Use a private window and check the response chain.
+                                Permanent redirects may be cached by browsers.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 wh-note"><strong>Deployment hygiene:</strong> Keep all HTML files,
+                    <code>styles.css</code>, <code>script.js</code>, and referenced assets together with the correct
+                    relative paths when publishing a new Pages deployment. Uploading only <code>index.html</code> and
+                    <code>web-hosting.html</code> without the existing shared assets will leave the styling and images
+                    incomplete.
+                </div>
+            </section>
+            <section class="wh-section wh-anchor" id="glossary"><span class="wh-kicker">09 / Recap</span>
+                <h2 class="wh-heading mt-2">One-minute glossary</h2>
+                <div class="row g-3 mt-2">
+                    <div class="col-md-6">
+                        <div class="wh-card"><h3>Registration versus hosting</h3>
+                            <p class="mb-0">The registrar maintains My right to use the domain; the hosting platform
+                                serves My deployed website files.</p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card"><h3>Authoritative DNS versus resolver</h3>
+                            <p class="mb-0">Cloudflare authoritative DNS publishes answers; a recursive resolver
+                                retrieves and caches them for clients.</p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card"><h3>CNAME versus 301</h3>
+                            <p class="mb-0">A CNAME changes how a hostname resolves in DNS. A 301 changes the URL the
+                                browser requests.</p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wh-card"><h3>Cloudflare DNS versus Pages</h3>
+                            <p class="mb-0">DNS helps browsers reach Cloudflare; Pages maps My hostname to the static
+                                site content.</p></div>
+                    </div>
+                </div>
+                <div class="text-center mt-5"><h3 class="h4 fw-bold">From a domain name to a real website</h3>
+                    <p class="text-secondary">Registration → Delegation → Resolution → TLS → HTTP → Edge routing →
+                        Static asset delivery</p><a href="index.html" class="btn btn-primary rounded-pill px-4">Return
+                        to homepage <i class="bi bi-arrow-right ms-1"></i></a></div>
+            </section>
+        </main>
+    </div>
+</div>
+<footer class="site-footer mt-5">
+    <div class="container-xxl py-5">
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="d-flex align-items-center gap-2 mb-3"><span class="brand-badge">BD</span><strong
+                        class="fs-5">Binit Datta</strong></div>
+                <p class="text-secondary">Enterprise technology leader, architect, author and educator connecting
+                    business context with secure modern engineering.</p></div>
+            <div class="col-lg-3"><h6>Explore</h6><a href="architecture.html">Architecture</a><a href="technology.html">Technology</a><a
+                    href="web-hosting.html">Web Hosting</a></div>
+            <div class="col-lg-3"><h6>Connect</h6><a href="https://www.linkedin.com/in/binitdatta/" target="_blank"
+                                                     rel="noopener">LinkedIn</a><a
+                    href="https://www.youtube.com/@SecureAILearningLab" target="_blank" rel="noopener">YouTube</a><a
+                    href="contact.html">Contact</a></div>
+        </div>
+        <hr>
+        <div class="small text-secondary">© <span id="year"></span> Binit Datta. Educational reference for static web
+            hosting.
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+</body>
+</html>
